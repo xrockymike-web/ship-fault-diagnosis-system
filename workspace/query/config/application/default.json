@@ -1,0 +1,16 @@
+{
+  "_note": "应用层默认配置（随程序发布，只读）。用户配置放 data/runtime/config/ 覆盖本文件（总纲 §7.5）。",
+  "window": {
+    "title": "船舶故障诊断系统",
+    "width": 1280,
+    "height": 840,
+    "minWidth": 960,
+    "minHeight": 600,
+    "backgroundColor": "#f7f7f8"
+  },
+  "features": {
+    "streaming": true,
+    "evidencePanel": false,
+    "graphOverview": false
+  }
+}

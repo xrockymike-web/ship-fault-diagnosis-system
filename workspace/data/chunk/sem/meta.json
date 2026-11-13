@@ -1,0 +1,9 @@
+{
+ "model": "Qwen3-Embedding-0.6B-Q8_0",
+ "template": "p23-v1",
+ "window": 2,
+ "sentences": 7479,
+ "boundaries": 7478,
+ "cos_mean": 0.70124,
+ "cos_sd": 0.114762
+}

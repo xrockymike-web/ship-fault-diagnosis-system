@@ -1,0 +1,1464 @@
+entity_id,name_en
+E-0001,traditional fault diagnosis method
+E-0002,fault tree analysis
+E-0003,expert system diagnosis method
+E-0004,electronic equipment fault analysis method
+E-0005,fault tree
+E-0006,top event
+E-0007,intermediate event
+E-0008,basic event
+E-0009,expert system
+E-0010,marine electrical equipment fault diagnosis expert system
+E-0011,knowledge base
+E-0012,inference engine
+E-0013,explanation facility
+E-0014,inquiry facility
+E-0015,knowledge acquisition facility
+E-0016,fault feature vector storage facility
+E-0017,controllable phase compound excitation constant-voltage device
+E-0018,maintenance personnel
+E-0019,criteria for traditional fault diagnosis
+E-0020,generator fails to build up voltage
+E-0021,low no-load voltage of generator
+E-0022,high no-load voltage of generator
+E-0023,question the operator
+E-0024,observation
+E-0025,check monitoring and indicating devices
+E-0026,reproduce the fault symptom when conditions permit
+E-0027,inspect using the five senses
+E-0028,evaluate inspection results
+E-0029,determine system structure and test method
+E-0030,system testing
+E-0031,electrical instrument
+E-0032,multimeter
+E-0033,analog multimeter
+E-0034,digital multimeter
+E-0035,MF-30 multimeter
+E-0036,MF-47 multimeter
+E-0037,meter movement
+E-0038,selector switch
+E-0039,measuring circuit
+E-0040,insulation resistance meter
+E-0041,megohmmeter
+E-0042,hand-cranked generator
+E-0043,magnetoelectric ratio meter
+E-0044,clamp-on ammeter
+E-0045,through-type current transformer
+E-0046,power meter
+E-0047,current coil
+E-0048,voltage coil
+E-0049,multi-range power meter
+E-0050,D34-W power meter
+E-0051,voltage transformer
+E-0052,current transformer
+E-0053,control transformer
+E-0054,fuse
+E-0055,shunt
+E-0056,capacitor
+E-0057,diode
+E-0058,transistor
+E-0059,thyristor
+E-0060,thermistor sensor
+E-0061,RTD sensor
+E-0062,photosensitive device
+E-0063,thermocouple
+E-0064,resistance
+E-0065,voltage
+E-0066,current
+E-0067,photoelectric power
+E-0068,TV
+E-0069,TA
+E-0070,FU
+E-0071,moving-coil instrument
+E-0072,moving-iron instrument
+E-0073,electrodynamic instrument
+E-0074,induction instrument
+E-0075,rectifier instrument
+E-0076,electrostatic instrument
+E-0077,thermoelectric instrument
+E-0078,electronic instrument
+E-0079,"Before measurement, observe the symbol markings on the dial to understand the instrument's performance characteristics, and carefully read the instrument's operating instructions to understand the precautions for use and the required working conditions (mounting position, temperature, external magnetic field, AC current waveform and frequency)."
+E-0080,"During measurement, connect the instrument correctly to the circuit under test. For example, when using a voltmeter to measure the voltage between two points in a circuit, connect the two test probes directly across these two points; when using an ammeter to measure the current in the branch containing a certain point in a circuit, first disconnect the conductor at that point, then connect the two broken ends to the two test probes of the ammeter respectively."
+E-0081,"For instruments requiring mechanical or electrical zero adjustment, set the indication to zero before measurement. For pointer-type instruments, keep the eye directly facing the pointer when reading."
+E-0082,"Voltmeters, ammeters and wattmeters used on ships shall have clear markings on their dials indicating their rated values. The instrument casing must not be opened arbitrarily, nor the internal mechanism removed."
+E-0083,"It is strictly forbidden to place instruments beside generators, motors or heavy-current conductors, or in locations with high temperature, rapid hot-cold changes, corrosive gases, or damp and dark conditions."
+E-0084,"Before using a multimeter to measure a quantity, the position of the selector switch and the jack in which the test leads are inserted must match the quantity to be measured, and check whether the pointer is at zero; otherwise, perform zero adjustment."
+E-0085,"During measurement with a multimeter, the position of the selector switch must not be changed arbitrarily."
+E-0086,"When measuring resistance in a circuit, at least one end of the resistor under test must be completely disconnected from the circuit, and the power supply in the circuit must be switched off. If capacitors exist in the circuit, discharge them before measurement; never measure resistance with the circuit energized. Before measurement, perform electrical zero adjustment, and re-adjust zero each time the range is changed."
+E-0087,"Before measuring voltage or current, if the pointer is not at zero, perform mechanical zero adjustment first. When measuring voltage or current, if the upper limit of the range of the voltage or current to be measured cannot be determined, set the selector switch to the maximum range, then adjust the selector switch to a suitable range according to the actual measurement conditions while disconnected from the measurement point."
+E-0088,"When measuring 2500V AC or DC voltage, insert the red test lead into the ""2500V"" jack and pay attention to safety."
+E-0089,"When measuring DC voltage or current, observe the polarity of the instrument. When measuring voltage, connect the red test lead to the point of higher potential in the circuit under test; when measuring current, the current shall flow into the meter through the red test lead."
+E-0090,"A multimeter is only suitable for measuring the effective value of sinusoidal voltage or current, and cannot measure non-sinusoidal quantities."
+E-0091,"After using a multimeter, set the selector switch to the maximum AC voltage range to ensure instrument safety."
+E-0092,"Since the current through the meter measuring mechanism is fixed and a magnetoelectric measuring mechanism can only pass microampere-level current, different conversion circuits are required to measure various electrical quantities and ranges."
+E-0093,"The multimeter has a complex structure and many types, with differing layouts of selector switches and jacks; read the instruction manual carefully before use."
+E-0094,DC current measurement steps: select range -> connect to circuit under test -> read value
+E-0095,DC voltage measurement steps: select range -> connect to circuit under test -> read value
+E-0096,AC voltage measurement steps: select range -> connect to circuit under test -> read value
+E-0097,"Audio level test steps: insert red probe into ""dB"" jack -> select range -> connect to circuit under test -> read value"
+E-0098,Resistance measurement steps: select range -> zero the meter -> connect to circuit or component under test -> read value
+E-0099,Capacitor measurement steps: leakage check -> capacitance test -> electrolytic capacitor polarity identification
+E-0100,Diode measurement steps: identify polarity -> determine performance
+E-0101,Transistor measurement steps: identify type and base -> identify emitter and collector -> performance test -> estimate current amplification factor
+E-0102,Thyristor measurement steps: polarity identification -> inter-electrode resistance measurement
+E-0103,Digital multimeter operating steps: power on -> select measurement function -> connect to object under test -> read value -> power off
+E-0104,Digital multimeter capacitance test steps: turn selector switch to capacitance range -> insert capacitor under test into capacitance jack -> read displayed value
+E-0105,Digital multimeter diode test steps: insert probes -> turn selector switch to diode range -> connect diode under test -> read forward voltage drop
+E-0106,"Digital multimeter transistor test steps: identify type -> test collector, emitter and current amplification factor -> determine performance"
+E-0107,Digital multimeter use and maintenance precautions: do not disassemble or replace circuits arbitrarily -> avoid strong impact -> keep dry -> do not connect to voltages above the specified maximum test range -> do not use resistance range to measure current or voltage -> do not use without batteries properly installed -> disconnect probes when switching ranges -> disconnect power when replacing battery or fuse
+E-0108,Insulation resistance meter selection principle: select according to rated operating voltage of object under test -> also avoid damaging object under test
+E-0109,Insulation resistance meter precautions: perform open-circuit and short-circuit tests before measurement -> never measure energized electrical equipment -> discharge equipment under test after measurement -> wipe surface of equipment under test clean -> place horizontally on stable hard ground -> keep speed within specified range -> use guard ring when necessary -> observe safety to avoid electric shock -> select instrument according to equipment rated voltage -> connect with single-strand wire -> never measure low-voltage electronic equipment
+E-0110,"Insulation resistance meter error adjustment steps: check electrical circuit and mechanical mechanism -> adjust ""∞"" position -> adjust ""0"" position -> fine-tune pointer or guide wire"
+E-0111,Insulation resistance meter calibration methods: calibration with standard resistor -> calibration with self-made resistance box -> rough calibration
+E-0112,Steps for measuring insulation resistance of coil to ground in electrical equipment: cut off power -> connect terminals -> measure and read value
+E-0113,Steps for measuring insulation resistance of line to ground: cut off power -> connect terminals -> turn handle -> read value
+E-0114,Steps for measuring insulation resistance between lines: cut off power -> connect terminals -> turn handle -> read value
+E-0115,Clamp ammeter usage: wipe oil and dirt from jaws -> check pointer zero position -> select maximum range -> adjust to suitable range -> clamp conductor under test -> read value -> set range to maximum after measurement
+E-0116,Power meter wiring rules: current coil connected in series in circuit -> voltage coil connected in parallel in circuit -> same-name terminal marking
+E-0117,Three-phase circuit active power measurement methods: one-wattmeter method -> two-wattmeter method -> three-wattmeter method
+E-0118,AC voltage measurement circuits: AC single-phase voltage measurement circuit -> AC three-phase voltage direct measurement circuit
+E-0119,Current measurement methods: DC current measurement -> AC current measurement
+E-0120,Marine electrical equipment
+E-0121,marine cable
+E-0122,marine rubber-insulated non-flame-retardant rubber-sheathed cable
+E-0123,marine rubber-insulated non-flame-retardant rubber-sheathed galvanized steel wire braided cable
+E-0124,marine rubber-insulated non-flame-retardant rubber-sheathed flexible cable
+E-0125,marine rubber-insulated oil-resistant rubber-sheathed cable
+E-0126,graphite brush
+E-0127,electrographite brush
+E-0128,metal-graphite brush
+E-0129,white cloth tape
+E-0130,polyester film adhesive tape
+E-0131,fish paper
+E-0132,polyester film
+E-0133,pressboard
+E-0134,resistor
+E-0135,variable resistor
+E-0136,photoresistor
+E-0137,thermistor
+E-0138,capacitor
+E-0139,inductor
+E-0140,diode
+E-0141,light-emitting diode
+E-0142,Zener diode
+E-0143,transistor
+E-0144,integrated circuit
+E-0145,power supply circuit
+E-0146,filter circuit
+E-0147,voltage regulator circuit
+E-0148,printed circuit board
+E-0149,maintenance of electrical equipment with heating stages
+E-0150,precautions for using an electric soldering iron
+E-0151,Marine material service conditions
+E-0152,Electrical equipment requirements for explosive hazardous spaces
+E-0153,Marine cable selection principles
+E-0154,Insulating material performance requirements
+E-0155,Electronic component soldering requirements
+E-0156,Light-emitting diode usage precautions
+E-0157,Conductive copper core wire
+E-0158,Insulation layer
+E-0159,Protective layer
+E-0160,Armoring
+E-0161,Resistor fault
+E-0162,Capacitor fault
+E-0163,Zener diode fault
+E-0164,Transistor fault
+E-0165,Circuit board fault
+E-0166,Resistor testing steps
+E-0167,Capacitor testing steps
+E-0168,Inductor testing steps
+E-0169,Diode testing steps
+E-0170,Circuit board repair steps
+E-0171,Contactor
+E-0172,Transistor relay
+E-0173,Current relay
+E-0174,Time relay
+E-0175,Thermal relay
+E-0176,Pressure relay
+E-0177,Voltage relay
+E-0178,Non-electrical quantity relay
+E-0179,Temperature relay
+E-0180,Electromagnetic relay
+E-0181,Water level relay
+E-0182,Intermediate relay
+E-0183,Circuit breaker
+E-0184,Molded case circuit breaker
+E-0185,Air circuit breaker
+E-0186,RS
+E-0187,RLS
+E-0188,BX
+E-0189,RSo
+E-0190,RM10
+E-0191,Fuse
+E-0192,RL93
+E-0193,Programmable logic controller (PLC)
+E-0194,PLC control system
+E-0195,Contactor maintenance
+E-0196,Relay maintenance
+E-0197,Circuit breaker maintenance
+E-0198,PLC maintenance
+E-0199,"Generally, the fuse should be removed for replacement with the power off"
+E-0200,"Before replacing the new fuse element, the slag, soot and dust on the inner surface of the tube and the contact surfaces must be carefully wiped clean"
+E-0201,"When replacing the fuse element, attention must be paid to the current rating and the number of fuse element strips, so that the fuse element is identical to the original"
+E-0202,"When replacing the fuse element, care should be taken not to bend or twist the fuse element"
+E-0203,"For enclosed cartridge fuses, the fuse tube must not be replaced with another insulating tube"
+E-0204,Arc chute
+E-0205,Main contact
+E-0206,Iron core
+E-0207,Coil
+E-0208,Shading ring
+E-0209,Return spring
+E-0210,Contact spring
+E-0211,fuse
+E-0212,fuse element
+E-0213,armature
+E-0214,trip unit
+E-0215,energy-storage spring
+E-0216,linkage
+E-0217,auxiliary switch
+E-0218,central processing unit (CPU)
+E-0219,memory (RAM/EPROM)
+E-0220,input interface
+E-0221,output interface
+E-0222,programmer
+E-0223,power supply section
+E-0224,lithium battery
+E-0225,bus
+E-0226,input terminal
+E-0227,output terminal
+E-0228,contactor fails to pull in or has insufficient holding force with humming noise when start button pressed
+E-0229,contactor fails to pull in
+E-0230,contactor fails to release or releases slowly when stop button pressed
+E-0231,coil overheating or burnout
+E-0232,excessive noise from AC electromagnet
+E-0233,contact welding
+E-0234,contact overheating or burning
+E-0235,excessive contact wear
+E-0236,thermal relay malfunction
+E-0237,thermal relay fails to operate
+E-0238,main circuit open after thermal relay connected
+E-0239,thermal relay control circuit open
+E-0240,thermal relay fails to reset
+E-0241,"Manual operation of circuit breaker, contacts fail to close"
+E-0242,"Electric operation of circuit breaker, contacts fail to close"
+E-0243,One phase contact fails to close
+E-0244,Shunt trip release fails to open circuit breaker
+E-0245,Undervoltage release fails to open circuit breaker
+E-0246,Circuit breaker trips immediately on motor start
+E-0247,Circuit breaker trips automatically after closing (about 1 h)
+E-0248,Noise from undervoltage release
+E-0249,Excessive temperature rise of circuit breaker
+E-0250,Auxiliary switch fault
+E-0251,"Semiconductor overcurrent release malfunctions, tripping circuit breaker"
+E-0252,POWER lamp off
+E-0253,Fuse blows repeatedly
+E-0254,RUN lamp off
+E-0255,All inputs fail to turn on
+E-0256,All PLC inputs abnormal
+E-0257,One input relay fails to turn on
+E-0258,One input relay stays closed
+E-0259,Inputs operate randomly
+E-0260,Abnormally operating relay numbers in units of 8 points
+E-0261,Input relay operates correctly but indicator lamp off
+E-0262,All outputs fail to turn on
+E-0263,All outputs fail to turn off
+E-0264,One output relay fails to turn on with indicator lamp off
+E-0265,One output relay fails to turn on with indicator lamp on
+E-0266,One output relay fails to turn off with indicator lamp off
+E-0267,One output relay fails to turn off with indicator lamp on
+E-0268,Outputs operate randomly
+E-0269,Abnormally operating relay numbers in units of 8
+E-0270,Output relay operates normally but indicator lamp off
+E-0271,"Moving parts jammed, shaft rusted or skewed"
+E-0272,Heating element burnt out
+E-0273,Thermal relay not reset
+E-0274,Ambient temperature too high or use in enclosed control box
+E-0275,Input signal source (device) fault
+E-0276,"Moving parts jammed, spring reaction force too large, shaft rusted or skewed"
+E-0277,Undervoltage release no voltage or coil burnt out
+E-0278,"Contacts burnt out or moving contact spring elasticity lost, causing poor or no contact between moving and fixed contacts"
+E-0279,"""COM"" screw loose"
+E-0280,Contact welding
+E-0281,"No END instruction in program, power supply fault, duplicate I/O port address"
+E-0282,"Contact surface severely burnt causing poor contact, or burrs, metal particles, etc."
+E-0283,Coil short circuit
+E-0284,Supply voltage low
+E-0285,"Armature skewed or mechanically jammed, preventing core from seating flat and firm"
+E-0286,Output wiring broken
+E-0287,Reaction spring force too large
+E-0288,Mechanism seized
+E-0289,Stored energy released
+E-0290,Power supply line broken
+E-0291,Auxiliary switch drive rod broken or roller detached
+E-0292,Contact spring pressure insufficient or overtravel too small
+E-0293,Coil rated voltage higher than line rated voltage
+E-0294,Output drive circuit fault
+E-0295,Bimetal strip deformed
+E-0296,Coil open circuit
+E-0297,Heating element or semiconductor delay circuit component deteriorated
+E-0298,Internal coil short circuit
+E-0299,Actuating mechanism jammed
+E-0300,Fuse blown
+E-0301,Motor starting time too long
+E-0302,Three-phase contacts not synchronized
+E-0303,"Excessive operating frequency or current, insufficient contact capacity"
+E-0304,"Dial or adjusting screw turned to improper position, pushing contacts open"
+E-0305,Motor operating positioning switch failure
+E-0306,Input circuit fault
+E-0307,Input noise too high
+E-0308,"Moving parts jammed, energized for long time"
+E-0309,Insufficient power supply capacity
+E-0310,Armature return spring failed or missing
+E-0311,Angle between foldable links of current-limiting switch release mechanism increased
+E-0312,Input signal source not powered
+E-0313,"Energy-storage spring deformed, reducing closing force"
+E-0314,Poor contact (terminal block)
+E-0315,"Coil technical parameters (rated voltage, frequency, duty cycle, etc.) do not match actual operating conditions"
+E-0316,Thermal relay adjustable parts loose
+E-0317,CPU bus fault
+E-0318,Contact spring pressure too low
+E-0319,Return spring weakened
+E-0320,"Fuse blown, input terminal poor contact, input power line broken"
+E-0321,Oil contamination on core working surface
+E-0322,Input on-time too short
+E-0323,Setting value too high
+E-0324,External wiring screw not tightened
+E-0325,Oil sludge adhered to core pole face
+E-0326,Electromagnet pull rod stroke insufficient
+E-0327,Input poor contact
+E-0328,Load power not applied
+E-0329,Input signal source voltage too low
+E-0330,Output interface circuit fault
+E-0331,Reset leaf spring broken
+E-0332,Output circuit fault
+E-0333,Excessive input noise
+E-0334,Input interface circuit fault
+E-0335,Excessive contact spring pressure or overtravel
+E-0336,Insufficient attraction
+E-0337,Poor terminal board contact
+E-0338,Duplicate port address in output command
+E-0339,Loose terminal contact
+E-0340,Excessive ambient temperature variation
+E-0341,Excessive operating frequency
+E-0342,Excessive operating frequency
+E-0343,Too short interval between reclosing and tripping
+E-0344,Insufficient contact capacity
+E-0345,Excessive reclosing contact surface
+E-0346,Shading ring broken
+E-0347,Output relay damaged
+E-0348,Excessive return spring force
+E-0349,Insufficient operating power supply capacity
+E-0350,Generally a broken connecting rod of one circuit breaker phase
+E-0351,Overcurrent trip instantaneous setting current too low
+E-0352,Operating power supply voltage mismatch
+E-0353,LED damaged
+E-0354,Excessive operating frequency or overload use
+E-0355,Input circuit fault
+E-0356,Partial short circuit inside coil
+E-0357,Input wiring broken
+E-0358,Load short circuit
+E-0359,Contact pressure too low
+E-0360,Moving part seized
+E-0361,Load-side short circuit
+E-0362,Supply voltage too low or excessive fluctuation
+E-0363,Loose connecting screw between two conductive parts
+E-0364,"After fault identification, with semiconductor trip unit confirmed undamaged, most cases may be external electromagnetic interference"
+E-0365,Faulty load power supply or voltage too low
+E-0366,Poor contact
+E-0367,"Dust accumulation or rust, transmission mechanism worn and deformed"
+E-0368,"Contact gap too large (i.e., armature air gap too large)"
+E-0369,Excessive leakage current of output driver transistor
+E-0370,Loose screw
+E-0371,Damaged rectifier or capacitor in controller
+E-0372,Poor contact of output terminal
+E-0373,Poor contact of contacts
+E-0374,Severe contact wear and open solder joint
+E-0375,Output on-time too short
+E-0376,Mechanism fails to reset and reclose
+E-0377,Incorrect long-time delay setting of overcurrent trip unit
+E-0378,Poor contact of terminal connecting bar
+E-0379,"Load short circuit or overload, incorrect input voltage setting, fuse capacity too small"
+E-0380,Auxiliary switch moving contact bridge jammed or detached
+E-0381,"Foreign matter on core pole face (e.g., oil dirt, dust) or poor contact"
+E-0382,Adjustable part damaged or not aligned with scale
+E-0383,Loose input terminal or poor contact of input terminal
+E-0384,Input signal level too low
+E-0385,Setting value too small
+E-0386,Supply voltage too low
+E-0387,Excessive contact surface wear or poor contact
+E-0388,"Special operating environment, such as humid air, corrosive gas, or excessive ambient temperature"
+E-0389,I/O bus fault in CPU
+E-0390,"Excessive operating frequency, excessive operating current"
+E-0391,Supply voltage too high (>1.1U~) or too low (<0.85U)
+E-0392,Output circuit fault
+E-0393,PLC supply voltage too low
+E-0394,Power fuse blown
+E-0395,Shading ring broken or detached
+E-0396,Poor contact of input terminal
+E-0397,Input power line broken
+E-0398,Load short circuit or overload
+E-0399,Input voltage setting error
+E-0400,Fuse rating too small
+E-0401,No END instruction in program
+E-0402,Power supply fault
+E-0403,Duplicate I/O port address
+E-0404,Input wiring broken
+E-0405,Input circuit fault
+E-0406,Output circuit fault
+E-0407,One-phase connecting rod of circuit breaker broken
+E-0408,Keep contactor clean
+E-0409,Regularly check all contactor fastening screws and fasteners
+E-0410,"Regularly check manually whether contactor operating mechanism moves freely, and add a small amount of lubricating oil to the shaft"
+E-0411,"Regularly check and adjust contactor contact pressure, gap and overtravel"
+E-0412,Regularly check whether contactor coil is firmly mounted on core and whether temperature rise is too high
+E-0413,"Check connecting wires for damage and aging, and solder joints for desoldering, cold solder and oxidation"
+E-0414,Check for loosening of wiring clamping screws caused by ship vibration and rolling
+E-0415,"Open outer cover, blow off dust with hot air blower, spray with electrical cleaner to remove oil and salt crystals"
+E-0416,Regularly replace internal lithium battery
+E-0417,Check whether switches and contacts of input peripherals are in good contact and whether analog signals from sensors deviate too much
+E-0418,"Check whether relays, solenoid valves and other output peripherals are in good working condition"
+E-0419,Replace fuse
+E-0420,Reconnect
+E-0421,Replace wiring
+E-0422,Measure with multimeter
+E-0423,Rewire correctly
+E-0424,Replace with higher-capacity fuse
+E-0425,Modify program
+E-0426,Modify port address
+E-0427,Connect relevant power supply
+E-0428,Adjust supply voltage to specification
+E-0429,Reconnect after treatment
+E-0430,Replace input interface circuit
+E-0431,Replace input device
+E-0432,Solder
+E-0433,Adjust relevant parameters
+E-0434,Check circuit or replace
+E-0435,Check power supply and input device
+E-0436,Check terminal wiring
+E-0437,Add shielding or filtering
+E-0438,Tighten
+E-0439,Replace CPU unit
+E-0440,Replace LED
+E-0441,Connect power supply
+E-0442,Adjust or repair
+E-0443,Replace output interface circuit
+E-0444,Modify output program
+E-0445,Replace relay
+E-0446,Solder wire or replace
+E-0447,Replace output transistor
+E-0448,Replace output port circuit
+E-0449,Adjust power supply output
+E-0450,Retighten
+E-0451,Replace CPU module
+E-0452,"Check circuit, apply voltage or replace coil"
+E-0453,Replace energy-storage spring
+E-0454,Readjust
+E-0455,Adjust trip contact surface to specified value
+E-0456,Replace power supply
+E-0457,Increase operating power supply capacity
+E-0458,Readjust or replace pull rod
+E-0459,Replace rectifier tube or capacitor
+E-0460,Replace connecting rod
+E-0461,Adjust to original technical specification requirements
+E-0462,Replace coil
+E-0463,Replace power supply or raise voltage
+E-0464,Tighten screw
+E-0465,Adjust spring
+E-0466,Adjust energy-storage spring
+E-0467,Eliminate cause of jamming
+E-0468,Adjust instantaneous setting spring of overcurrent release
+E-0469,Replace thermal element or semiconductor delay circuit component
+E-0470,Remove oil contamination
+E-0471,Replace armature or core
+E-0472,Adjust contact pressure or replace spring
+E-0473,Replace contact or clean contact surface
+E-0474,Straighten or reinstall moving contact bridge
+E-0475,Replace drive rod and roller or replace entire auxiliary switch
+E-0476,"Carefully locate fault cause; if large electromagnets are operating nearby, such as contactor switching or welding, isolate them or replace wiring"
+E-0477,Marine motor
+E-0478,Marine asynchronous motor
+E-0479,Squirrel-cage asynchronous motor
+E-0480,Marine DC motor
+E-0481,AC single-phase motor
+E-0482,electric fan
+E-0483,electric drill
+E-0484,refrigerator
+E-0485,washing machine
+E-0486,marine transformer
+E-0487,three-phase transformer
+E-0488,single-phase transformer
+E-0489,special-purpose transformer
+E-0490,AC welding machine
+E-0491,bearing maintenance
+E-0492,motor winding maintenance
+E-0493,commutator maintenance and brush grinding
+E-0494,general cleaning
+E-0495,working environment inspection
+E-0496,bearing servicing
+E-0497,supply voltage monitoring
+E-0498,armature current monitoring
+E-0499,temperature rise monitoring
+E-0500,operating sound monitoring
+E-0501,commutation spark monitoring
+E-0502,brush and commutator maintenance
+E-0503,mark circuit terminals before disassembly
+E-0504,mark mating surfaces before disassembly
+E-0505,mark before dismantling
+E-0506,prevent damage to winding ends
+E-0507,proper rotor placement
+E-0508,bearing removal precautions
+E-0509,magnetic pole removal precautions
+E-0510,bearing cleaning precautions
+E-0511,Bearing installation precautions
+E-0512,Motor winding cleaning precautions
+E-0513,Drying precautions
+E-0514,Assembly precautions
+E-0515,Winding protection during assembly
+E-0516,Screw tightening method
+E-0517,Foreign object prevention
+E-0518,Insulation test before and after assembly
+E-0519,Supply voltage monitoring
+E-0520,Armature current monitoring
+E-0521,Temperature rise monitoring
+E-0522,Commutation spark monitoring
+E-0523,Visual inspection
+E-0524,Insulation resistance measurement
+E-0525,Dielectric withstand test
+E-0526,No-load test
+E-0527,Load test and temperature rise measurement
+E-0528,Transformer moisture prevention
+E-0529,Lead terminal cleanliness maintenance
+E-0530,Transformer heating monitoring
+E-0531,Transformer wiring precautions
+E-0532,Welding machine usage precautions
+E-0533,Bearing
+E-0534,Winding
+E-0535,Commutator
+E-0536,Brush
+E-0537,Capacitor
+E-0538,Shaft
+E-0539,End ring
+E-0540,Fan blade
+E-0541,Timer
+E-0542,Speed control switch
+E-0543,Reduction gear
+E-0544,Drive belt
+E-0545,Pulsator
+E-0546,Brake drum
+E-0547,Drain valve
+E-0548,Drain hose
+E-0549,Seal ring
+E-0550,Starting relay
+E-0551,Temperature controller
+E-0552,Thermal relay
+E-0553,Defroster
+E-0554,Door gasket
+E-0555,Vibration damping rubber pad
+E-0556,Suspension spring
+E-0557,Capillary tube
+E-0558,Air damper
+E-0559,Motor fails to start
+E-0560,Motor speed low after starting
+E-0561,Motor temperature rise high
+E-0562,Motor running noise excessive
+E-0563,Motor running vibration excessive
+E-0564,Bearing overheating
+E-0565,Excessive sparking under brushes
+E-0566,DC generator fails to build up voltage
+E-0567,DC generator voltage low
+E-0568,Motor speed high
+E-0569,Motor speed low
+E-0570,Armature winding overheating or burnt
+E-0571,Field coil overheating
+E-0572,Excessive armature vibration
+E-0573,Electric fan fails to start
+E-0574,Electric fan starts slowly with reduced speed
+E-0575,Electric fan runs intermittently
+E-0576,Abnormal noise during electric fan operation
+E-0577,Electric fan overheating
+E-0578,Motor starts only after manual rotation
+E-0579,Abnormal oscillation mechanism operation of electric fan
+E-0580,Electric drill fails to start
+E-0581,Electric drill speed too low
+E-0582,Abnormal noise during electric drill operation
+E-0583,Excessive sparking between brush and commutator
+E-0584,Electric drill overheating
+E-0585,Electric drill fails to start at certain position
+E-0586,Washing machine not working after power-on
+E-0587,Slow pulsator speed causing poor washing
+E-0588,Pulsator runs intermittently
+E-0589,Power supply problem
+E-0590,Mechanical problem
+E-0591,Excessive load
+E-0592,Motor fault
+E-0593,Undervoltage
+E-0594,Power supply phase loss
+E-0595,Incorrect wiring connection
+E-0596,Line voltage mismatch
+E-0597,Long-term overload
+E-0598,Deteriorated cooling conditions
+E-0599,Electromagnetic noise
+E-0600,Mechanical noise
+E-0601,Bearing fault
+E-0602,Lubrication fault
+E-0603,Installation fault
+E-0604,Motor overload
+E-0605,Poor brush-commutator contact
+E-0606,Loose brush holder
+E-0607,Armature vibration
+E-0608,Commutator segment short circuit
+E-0609,Brush off neutral axis
+E-0610,Power supply not connected
+E-0611,Stator winding open circuit
+E-0612,End ring (shading coil) unsoldered
+E-0613,Capacitor damaged
+E-0614,Supply voltage too low
+E-0615,Insufficient capacitor capacitance
+E-0616,Main winding inter-turn short circuit
+E-0617,Unstable supply voltage
+E-0618,Poor line contact
+E-0619,"Fan blade deformed, twist angle too large"
+E-0620,Bearing wear
+E-0621,Motor overload
+E-0622,Bearing lack of oil
+E-0623,Insufficient capacitor capacitance
+E-0624,Starting winding open circuit
+E-0625,Loose oscillating mechanism parts
+E-0626,Oscillating mechanism lack of oil
+E-0627,Power supply problem
+E-0628,Severe brush wear
+E-0629,Switch damaged
+E-0630,Supply voltage too low
+E-0631,poor brush contact
+E-0632,gear wear
+E-0633,bearing wear
+E-0634,gear damage
+E-0635,brush wear
+E-0636,rough commutator surface
+E-0637,overload operation
+E-0638,poor ventilation
+E-0639,stator winding short circuit
+E-0640,armature winding open circuit
+E-0641,poor brush contact
+E-0642,check power supply voltage
+E-0643,check motor fault
+E-0644,check power supply voltage
+E-0645,check power supply phase loss
+E-0646,check power supply voltage
+E-0647,check long-term overload
+E-0648,check electromagnetic noise
+E-0649,check mechanical noise
+E-0650,check electromagnetic noise
+E-0651,check mechanical noise
+E-0652,check bearing fault
+E-0653,check lubrication
+E-0654,check installation
+E-0655,check power supply voltage
+E-0656,check brush-commutator contact
+E-0657,check brush holder
+E-0658,check armature vibration
+E-0659,check commutator segments
+E-0660,check brush position
+E-0661,Check power supply line
+E-0662,Locate and repair open circuit
+E-0663,Reweld end ring
+E-0664,Replace capacitor
+E-0665,Check power supply voltage
+E-0666,Replace capacitor
+E-0667,Repair main winding
+E-0668,Check power supply voltage stability
+E-0669,Check line contact condition
+E-0670,Align fan blade
+E-0671,Replace bearing
+E-0672,Check load
+E-0673,Lubricate bearing
+E-0674,Replace capacitor
+E-0675,Repair starting winding
+E-0676,Tighten oscillating mechanism parts
+E-0677,Lubricate oscillating mechanism
+E-0678,Check power supply
+E-0679,Replace brush
+E-0680,Replace switch
+E-0681,Check power supply voltage
+E-0682,Adjust brush
+E-0683,Replace gear
+E-0684,Replace bearing
+E-0685,Replace gear
+E-0686,Replace brush
+E-0687,Grind commutator
+E-0688,Reduce load
+E-0689,Improve ventilation
+E-0690,Repair stator winding
+E-0691,Repair armature winding
+E-0692,Adjust brush
+E-0693,AC boat davit control circuit
+E-0694,Air compressor control circuit
+E-0695,Automatic feed water control circuit
+E-0696,Automatic pump control system
+E-0697,Double-lever cargo winch
+E-0698,Single-lever cargo winch
+E-0699,Deck crane
+E-0700,AC electric cargo winch
+E-0701,DC electric cargo winch
+E-0702,Electric windlass
+E-0703,Mooring winch
+E-0704,Electro-hydraulic steering gear
+E-0705,Marine auxiliary boiler
+E-0706,Automatic oil-fired boiler
+E-0707,Starter box maintenance
+E-0708,Acceptance of starter box after overhaul
+E-0709,Maintenance of electromagnetic control panels and control boxes
+E-0710,Maintenance of master controllers and cam controllers
+E-0711,Maintenance of electromagnetic brake
+E-0712,Routine maintenance of AC electric cargo winch electrical system
+E-0713,Maintenance of windlass and mooring winch electrical systems
+E-0714,Steering gear alignment during pre-departure standby
+E-0715,Inspection during voyage
+E-0716,Maintenance of steering gear electrical system
+E-0717,Control system maintenance
+E-0718,Ignition system maintenance
+E-0719,Feed water system maintenance
+E-0720,Maintenance of air-oil regulating device
+E-0721,Exhaust gas boiler mechanical drive maintenance
+E-0722,Short-circuit fault detection precautions
+E-0723,Open-circuit fault inspection precautions
+E-0724,Boiler control system routine maintenance precautions
+E-0725,Electromagnetic brake
+E-0726,Ignition rod
+E-0727,Photoresistor
+E-0728,Solenoid valve
+E-0729,Water level sensor
+E-0730,Proportional pressure regulator
+E-0731,Electric proportional actuator
+E-0732,Servo motor
+E-0733,Potentiometer
+E-0734,Line short-circuit fault
+E-0735,Line open-circuit fault
+E-0736,Line ground fault
+E-0737,Motor fails to start when up start button SBTF pressed
+E-0738,Control circuit short circuit
+E-0739,Contactor KMF operates when start button SBT pressed but motor fails to start
+E-0740,System fails to start
+E-0741,Motor stops immediately after start button SBT reset
+E-0742,Motor suddenly stops during operation
+E-0743,High noise from starter box after starting
+E-0744,Indicator lamp not lit
+E-0745,Changeover too early
+E-0746,Changeover too late
+E-0747,Changeover fails
+E-0748,Automatic start failure
+E-0749,Automatic changeover fails
+E-0750,Automatic sequential start fails
+E-0751,Unit fails to start in manual operation
+E-0752,Motor overheating or even burnout
+E-0753,Electromagnetic brake temperature rise and excessive friction-disc wear
+E-0754,Control system out of control
+E-0755,Neither ahead nor astern starts when master controller handle is moved
+E-0756,Only ahead or only astern operates when master controller handle is moved
+E-0757,No high or medium speed in either ahead or astern
+E-0758,Excessive load slip during braking
+E-0759,Motor single-phase operation
+E-0760,Constant-power cargo winch cannot run at high speed under light load
+E-0761,"Electromagnetic brake fails to pull in, motor stalls"
+E-0762,Electromagnetic brake fails to release
+E-0763,Electromagnetic brake releases immediately after pulling in
+E-0764,Electromagnetic brake overheating
+E-0765,Excessive friction-disc wear
+E-0766,Severe motor overheating
+E-0767,"Only medium and low speed, no high speed"
+E-0768,Brake failure
+E-0769,Autopilot not working
+E-0770,Autopilot sluggish response
+E-0771,Excessive autopilot error
+E-0772,Failure to ignite
+E-0773,Failure of automatic feedwater supply
+E-0774,Failure of automatic ignition and combustion pressure buildup
+E-0775,Flame extinguishes automatically after ignition
+E-0776,Failure to maintain normal air pressure and temperature automatically
+E-0777,Automatic flameout with excessively frequent ignition
+E-0778,Poor maintenance management and improper operation
+E-0779,Inherent equipment defect
+E-0780,Line fuse element blown
+E-0781,Loose screw or detached nut at wire joint
+E-0782,Poor contact of line contactor contacts
+E-0783,Broken conductor in wire
+E-0784,Changeover switch damaged or poor contact
+E-0785,Line broken by foreign object impact
+E-0786,Poor contact or failure to reset of protective device contacts
+E-0787,Open-circuit fault in equipment itself
+E-0788,Loss of function of self-holding auxiliary contact KM
+E-0789,Thermal relay FR tripped
+E-0790,"Failure of one functional logic element among lamp, lamp holder, transformer and KM auxiliary contact"
+E-0791,Time relay KT delay time too short
+E-0792,"Motor difficult to start, starting time too long"
+E-0793,"Fault in time relay KT, contactor KM2 itself or their coil circuits"
+E-0794,Main power supply fault
+E-0795,Motor fault
+E-0796,Control system component failure
+E-0797,Standby pump auxiliary fails to start automatically
+E-0798,J1 normally closed contact fails to close when de-energized
+E-0799,Delay relay SJ2 or SJ3 fault
+E-0800,1c1 does not operate
+E-0801,1d1 does not operate
+E-0802,Heavy load overspeed
+E-0803,"Long-time overload, operating frequency too high"
+E-0804,Motor locked rotor
+E-0805,Motor fault
+E-0806,Time relay 2SJ setting too short
+E-0807,Discharge resistor in electromagnetic brake coil circuit too large
+E-0808,Economy resistor resistance too large or inserted too early
+E-0809,Diode breakdown in brake coil discharge circuit
+E-0810,"Friction plate clearance too small, uneven clearance, friction plate deformation"
+E-0811,Excessive spring force inside brake
+E-0812,Main power supply fault
+E-0813,Control circuit fuse blown
+E-0814,Brake contactor not actuated or poor contact
+E-0815,Master controller poor contact closure or master controller damaged
+E-0816,Damper switch not closed
+E-0817,Temperature relay not reset or poor contact
+E-0818,Undervoltage relay poor contact
+E-0819,Emergency switch poor contact
+E-0820,One directional contactor faulty
+E-0821,Directional contactor poor contact
+E-0822,Master controller faulty
+E-0823,Time relay 2SJ delay setting too short
+E-0824,Electromagnetic brake core residual magnetism
+E-0825,"Friction disc too smooth, excessive clearance, insufficient return spring force"
+E-0826,Load relay malfunction or incorrect setting
+E-0827,Electromagnetic brake circuit open or shorted
+E-0828,Time relay KT malfunction
+E-0829,Friction disc cracked and jammed
+E-0830,"Acceleration contactor auxiliary contact not opened, electromagnetic brake not de-energized"
+E-0831,Brake contactor faulty
+E-0832,"Improper acceleration contactor transfer during gear shifting, interruption"
+E-0833,KT delay too short
+E-0834,Brake coil economy resistor resistance too high
+E-0835,Brake return spring force too strong
+E-0836,Brake coil inter-turn short circuit
+E-0837,Friction disc deformed or inter-disc clearance too small
+E-0838,Economy resistor resistance too low or inserted too late
+E-0839,Inter-disc clearance too small
+E-0840,"Poor friction disc quality, not wear-resistant"
+E-0841,"Motor regenerative braking time too short, high-speed braking occurs"
+E-0842,"Uneven friction disc clearance, long-term high-speed friction, friction disc deformation"
+E-0843,"Frequent operation, harsh working conditions"
+E-0844,Overcurrent relay GLJ maloperation
+E-0845,"Poor contact of master controller, contactor and relay contacts"
+E-0846,2SJ time relay delay setting too short
+E-0847,Ignition gap problem
+E-0848,Ignition rod insulation problem
+E-0849,Ignition transformer problem
+E-0850,Solenoid valve fault
+E-0851,Oil nozzle blockage
+E-0852,Oil circuit system pressure problem
+E-0853,2JZ fault
+E-0854,Circuit or relay fault controlling 7JZ or 8JZ
+E-0855,Contactor 1CJ or pump auxiliary unit fault
+E-0856,Automatic transfer switch K1~K7 not in position
+E-0857,Maloperation of minimum water level and ignition failure relays 6JZ and 5JZ
+E-0858,Pressure relay YD and 1JZ fault
+E-0859,Sequence controller 1JS fault
+E-0860,Photoresistor Rg aging
+E-0861,1JT relay or circuit fault
+E-0862,Pressure regulator YBD setpoint change
+E-0863,Electric proportional regulator DBC fault
+E-0864,Air pressure relay YD upper and lower limit deviation too small
+E-0865,Improper adjustment of damper mechanical linkage
+E-0866,Short-circuit fault inspection procedure
+E-0867,Live-line open-circuit fault inspection
+E-0868,De-energized open-circuit fault inspection
+E-0869,Ground fault inspection procedure
+E-0870,AC boat davit control circuit fault inspection procedure
+E-0871,Control circuit short-circuit inspection procedure
+E-0872,Main circuit fault inspection procedure
+E-0873,Starting box commissioning procedure
+E-0874,Electromagnetic brake gap measurement method
+E-0875,Electromagnetic brake gap adjustment
+E-0876,Electromagnetic brake braking torque adjustment
+E-0877,Commissioning of windlass and mooring winch electrical control system
+E-0878,Post-repair commissioning of steering gear drive electrical control system
+E-0879,Troubleshooting method for ignition failure
+E-0880,Troubleshooting method for automatic water supply failure
+E-0881,Troubleshooting method for automatic ignition and combustion pressure buildup failure
+E-0882,Troubleshooting method for flame extinguishing automatically after ignition
+E-0883,Troubleshooting method for failure to maintain normal air pressure and temperature automatically
+E-0884,Troubleshooting method for automatic flameout and excessive ignition frequency
+E-0885,Alarm subsystem commissioning
+E-0886,Automatic water supply system commissioning
+E-0887,Ignition control system commissioning
+E-0888,General alarm device
+E-0889,Direct control mode
+E-0890,Indirect control mode
+E-0891,General alarm device control system
+E-0892,Automatic fire monitoring and alarm device
+E-0893,Alarm controller
+E-0894,Fire detector
+E-0895,Smoke fire detector
+E-0896,Ionization smoke fire detector
+E-0897,Dual-source smoke fire detector
+E-0898,Single-source smoke fire detector
+E-0899,Photoelectric smoke fire detector
+E-0900,Light-obscuration photoelectric smoke fire detector
+E-0901,Scattered-light photoelectric smoke fire detector
+E-0902,Heat fire detector
+E-0903,Fixed-temperature fire detector
+E-0904,Rate-of-rise fire detector
+E-0905,Rate-of-rise and fixed-temperature fire detector
+E-0906,Flame fire detector
+E-0907,Ultraviolet detector
+E-0908,Infrared detector
+E-0909,Combustible gas fire detector
+E-0910,Two-wire connection
+E-0911,Four-wire connection
+E-0912,Bus-coded transmission centralized alarm system
+E-0913,Central unit
+E-0914,Alarm processing board
+E-0915,Detection loop interface board
+E-0916,Relay board
+E-0917,Communication interface board
+E-0918,Digital input board
+E-0919,Digital output board
+E-0920,Digital detector interface board
+E-0921,Power supply unit
+E-0922,Detection loop
+E-0923,Operating unit
+E-0924,Flammable gas detection system
+E-0925,Chemical reagent method
+E-0926,Infrared/spectrophotometer/chromatography method
+E-0927,Catalytic filament method
+E-0928,Gas-sensitive semiconductor method
+E-0929,Explosion-proof safety probe
+E-0930,Intrinsically safe pump-suction detection device
+E-0931,Multi-point cyclic monitoring alarm device
+E-0932,Bus-controlled fire monitoring system
+E-0933,Marine water mist fire extinguishing system
+E-0934,Local control section
+E-0935,Cargo control room section
+E-0936,Bridge display panel section
+E-0937,High-pressure pump outlet pressure
+E-0938,Zone audible and visual alarm
+E-0939,Zone solenoid valve
+E-0940,Cold storage room call alarm
+E-0941,Patient call alarm system
+E-0942,Engineer safety alarm system
+E-0943,Engineer safety alarm system control circuit
+E-0944,Closer
+E-0945,Alarm bell
+E-0946,Alarm lamp
+E-0947,Junction box
+E-0948,Only one remote start/stop button works
+E-0949,No response to remote button and control panel start operation
+E-0950,"After start operation, remote start/stop button indicator lights, control panel indicator does not light"
+E-0951,Fire detector missed alarm
+E-0952,Fire detector false alarm
+E-0953,"After detector is mounted on ceiling base, alarm controller displays alarm for that zone"
+E-0954,"Fire alarm displays alarm for a zone, but no fire exists in that zone"
+E-0955,No response to smoke during smoke test
+E-0956,No detector or input/output module registered on a loop
+E-0957,Only part of detectors and input/output modules registered on a loop
+E-0958,"Registered detectors and input/output modules show fire alarm or fault, but no fire or fault at their locations"
+E-0959,No water flow or insufficient water flow in fresh water tank
+E-0960,Main isolation valve fault
+E-0961,Main isolation valve limit switch wiring error
+E-0962,Pressure gauge at high-pressure pump outlet damaged
+E-0963,Zone audible-visual alarms and solenoid valves abnormal
+E-0964,Communication between local control box and cargo control room (ECR) abnormal
+E-0965,Nozzle clogged
+E-0966,Remote control button common wire connected incorrectly
+E-0967,Remote start/stop button connected to normally closed contact
+E-0968,Power supply polarity reversed
+E-0969,Detector did not detect sufficient smoke
+E-0970,Detector too close to ceiling causing smoke thermal barrier
+E-0971,Forced air flow from room ventilation deflecting smoke
+E-0972,Detector sensitivity too high
+E-0973,Smoking
+E-0974,Electric welding
+E-0975,Water vapor
+E-0976,Small insects and spider webs
+E-0977,Cooking
+E-0978,Lack of cleaning
+E-0979,Detector internal fault
+E-0980,Two wires on base reversed
+E-0981,"Detector internal fault, such as reduced FET input impedance, low Am-241 source activity, thyristor breakdown, etc."
+E-0982,Field-effect transistor damaged
+E-0983,Thyristor or Zener diode damaged
+E-0984,Unregistered detector and input/output module faults such as open circuit and duplicate address
+E-0985,Duplicate address of detector and input/output module
+E-0986,Water valve from fresh water tank to fresh water pump not opened or not fully opened
+E-0987,Motor connected to fresh water supply pump rotating in wrong direction
+E-0988,Filter or check valve installed in reverse direction
+E-0989,Main isolation valve limit switch connected to normally open contact
+E-0990,Air trapped in small pipe from high-pressure pump outlet to pressure gauge; starting high-pressure pump directly after closing bypass valve damages pressure gauge under high-pressure air surge
+E-0991,Reversed polarity of power supply to sound-light alarm and solenoid valve
+E-0992,"Solenoid valve wiring in paint store zone differs from other six zones; this zone's solenoid valve is not connected in the external junction box but wired directly from the solenoid valve to the local control box, and this wiring is easily misconnected to the fresh water supply pump solenoid valve"
+E-0993,Solenoid valve spool stuck by iron filings and other impurities
+E-0994,Incorrect communication line connection
+E-0995,Incorrect power line connection
+E-0996,Dirt in piping accumulates at the lowest point of the system due to gravity
+E-0997,Check whether the common wire of the remote control button is connected correctly
+E-0998,"Check whether the remote start/stop button is connected to the normally closed contact; if so, change to the normally open contact"
+E-0999,"Check whether the power polarity is reversed; if so, correct it"
+E-1000,Check polarity with a multimeter and swap the connections
+E-1001,Replace the detector
+E-1002,Check peripheral equipment and wiring
+E-1003,"Connect the detection bus to the detection bus output of the controller, power on the controller, and check whether all fire detectors and input/output modules are registered"
+E-1004,Program the fire detectors and input/output modules on the fire alarm controller
+E-1005,Select physical number
+E-1006,Select detector or input/output module type
+E-1007,Display address programming
+E-1008,Module location programming
+E-1009,Linkage logic programming
+E-1010,Verify whether the input/output module works normally
+E-1011,"During commissioning, the control output of the input/output module is not connected to the controlled equipment"
+E-1012,Press the emergency stop button immediately
+E-1013,"Check whether the water valve from the fresh water tank to the fresh water pump is open or fully open; if not open or not fully open, fully open this valve immediately"
+E-1014,"Before powering on the system, open the drain cock of the fresh water supply pump; if a large flow of water comes out, this link is normal"
+E-1015,"Check whether the rotation direction of the motor connected to the fresh water supply pump is correct; if reversed, adjust immediately"
+E-1016,"During commissioning of the local control box, the valve should first be closed, but the limit switch should be manually set to the open state"
+E-1017,Connect the main isolation valve limit switch to the closed contact
+E-1018,"Before the test, the bypass valve must first be opened; manually start the high-pressure pump on the local control box and run it for 23 min in bypass state to ensure air in the small pipe connected to the pressure gauge is expelled; then close the bypass valve, manually start the high-pressure pump, and verify the high-pressure pump outlet pressure"
+E-1019,Swap the positive and negative poles of the power supply to the sound-light alarm and solenoid valve
+E-1020,"Before actual spraying, manually open and close the manual release switch several times"
+E-1021,"When connecting communication cables, only ensure wire color and wire number are correct"
+E-1022,Check wiring with multimeter
+E-1023,"Before power-on, disconnect power cables in cargo control room; after power-on, identify positive and negative poles with multimeter, then connect"
+E-1024,"Before each system water discharge, remove the seven small nozzles, flush with high-pressure fresh water for about 1 min, then reinstall"
+E-1025,Check all component wiring for correctness and tightness
+E-1026,Measure power supply side for no short circuit and correct polarity
+E-1027,"For commissioning convenience, adjust time relay KT1 delay from 27 min to 2 min and KT2 to 1 min"
+E-1028,Main engine remote control system
+E-1029,Pneumatic main engine remote control system
+E-1030,Electric main engine remote control system
+E-1031,Electro-pneumatic main engine remote control system
+E-1032,Electro-hydraulic main engine remote control system
+E-1033,Microcomputer-controlled main engine remote control system
+E-1034,Fieldbus-type main engine remote control system
+E-1035,NABCO M-800 main engine remote control system
+E-1036,Digital electronic governor system
+E-1037,DGS-8800e digital electronic governor system
+E-1038,Main engine remote control system simulation test device
+E-1039,Keep starting and control air supply pressure normal and clean
+E-1040,Internal inspection of control box
+E-1041,Inspection of input and output components
+E-1042,Items to check before voyage in conjunction with main engine standby
+E-1043,Contents of periodic effectiveness test of all system functions
+E-1044,Test relevant indicator lights and promptly replace damaged bulbs or LEDs
+E-1045,Tighten plug-in boards and board sockets
+E-1046,Tighten fuses and terminals
+E-1047,Check whether electro-(hydraulic) converter valve operates normally
+E-1048,Check whether AC and DC working power supply voltages are normal
+E-1049,Carefully check all lead cables for open-circuit faults and whether shielding ends are reliably grounded
+E-1050,"If actuator is a servo motor, overhaul the motor periodically"
+E-1051,"Check relays, servo motors and brakes in control circuit"
+E-1052,Do not arbitrarily adjust system parameters or open components sealed with manufacturer red paint
+E-1053,Prevent foreign matter and dust from entering when opening pneumatic lines
+E-1054,"Drain residual water daily, inspect filter monthly, replace dirty strainer"
+E-1055,Record original data or original position before modifying system parameters via keyboard or trim potentiometers on PCB
+E-1056,Design test plan in advance before electrical measurement
+E-1057,"When simulating external relay contact closure (shorting two terminals), confirm no voltage between terminals or limited by current-limiting resistor to avoid short circuit and fault expansion"
+E-1058,Power off before inserting or removing PCB
+E-1059,Note PCB model and original slot position
+E-1060,Pressure reducing valve
+E-1061,Pressure regulating valve
+E-1062,Sealing ring
+E-1063,Fuel stop cylinder piston
+E-1064,Fuse
+E-1065,Terminal
+E-1066,Connector
+E-1067,Electrical component
+E-1068,Directional solenoid valve
+E-1069,Orifice 3
+E-1070,"Microcomputer remote start requires two attempts each time; first fails, second succeeds"
+E-1071,Main engine cannot accelerate after start and stops automatically
+E-1072,Severe air leakage at vent holes of pressure reducing and regulating valves
+E-1073,Air leakage in pneumatic logic circuit
+E-1074,Moving parts jammed
+E-1075,Fuse blown or power supply fault
+E-1076,Poor contact or corrosion of terminals or connectors
+E-1077,Electrical component fault
+E-1078,Incorrect wiring after maintenance
+E-1079,Main engine cannot be started remotely
+E-1080,Cannot restart
+E-1081,Unable to reverse by remote control
+E-1082,Starting fuel quantity too small
+E-1083,Orifice 3 clogged
+E-1084,"Orifice clogged, rubber diaphragm aged, or some components installed in wrong position during assembly/disassembly"
+E-1085,Pipe joint air leak or sealing ring in two-position three-way valve damaged or missing
+E-1086,Oil shortage
+E-1087,Operating parameter setting error
+E-1088,"Control mode selector switch not at selected control station, working air supply of main engine remote control pneumatic system not opened, etc."
+E-1089,Starting conditions not satisfied
+E-1090,Timing circuit or time relay fault (time-based principle)
+E-1091,Speed detection and judgment circuit fault (speed-based principle)
+E-1092,Logic circuit or logic relay circuit fault
+E-1093,Mechanical and control detection circuit or device fault for inability to shift to a certain direction
+E-1094,Reversing solenoid valve fault
+E-1095,Set starting fuel quantity air pressure for first start to 1.5 bar
+E-1096,Clean and adjust throttle valve
+E-1097,"Clear clogged orifice with a cleaning needle, remove dirt, replace rubber diaphragm"
+E-1098,Measure quantitatively from air source to end with pressure gauge to locate air leak
+E-1099,"Check whether control mode selector switch is at selected control station and whether working air supply of main engine remote control pneumatic system is opened, etc."
+E-1100,Check each starting condition or sensing detection element one by one for fault
+E-1101,Check timing circuit or time relay (time-based principle)
+E-1102,Check speed detection and judgment circuit (speed-based principle)
+E-1103,Check logic circuit or logic relay circuit
+E-1104,Test mechanical and control detection circuit or device for inability to shift to a certain direction
+E-1105,Check reversing solenoid valve
+E-1106,Anschutz 4 gyrocompass
+E-1107,Sperry MK37 gyrocompass
+E-1108,Arma-Brown 10 gyrocompass
+E-1109,Anschutz 22 gyrocompass
+E-1110,Radar equipment
+E-1111,Antenna
+E-1112,Transceiver
+E-1113,Display
+E-1114,Waveguide
+E-1115,Magnetron
+E-1116,Antenna rotation bearing lubrication
+E-1117,Antenna metal gear drive system cleaning and lubrication
+E-1118,Antenna worm gear reduction gearbox oil level check
+E-1119,Transmitter air filter cleaning
+E-1120,Transmitter high-voltage component electrostatic dust removal
+E-1121,Display air filter cleaning
+E-1122,Display surface cleaning
+E-1123,Power supply air filter cleaning
+E-1124,Anschutz 22 gyrocompass quick settling function precautions
+E-1125,Radar antenna installation precautions
+E-1126,Radar display installation precautions
+E-1127,Radar wiring precautions
+E-1128,Radar repair acceptance precautions
+E-1129,Supporting liquid
+E-1130,Gyrosphere
+E-1131,Follow-up sphere
+E-1132,Magnetron
+E-1133,Air filter
+E-1134,Anschutz 4 gyrocompass pre-start check and preparation
+E-1135,Anschutz 4 gyrocompass startup procedure
+E-1136,Anschutz 4 gyrocompass routine operation check
+E-1137,Sperry MK37 gyrocompass normal startup
+E-1138,Sperry MK37 gyrocompass shutdown
+E-1139,Arma-Brown 10 gyrocompass startup
+E-1140,Arma-Brown 10 gyrocompass shutdown
+E-1141,Anschutz 22 gyrocompass startup
+E-1142,Anschutz 22 gyrocompass support liquid replacement
+E-1143,radar installation
+E-1144,radar acceptance
+E-1145,radar periodic maintenance
+E-1146,radar range error correction
+E-1147,radar bearing error correction
+E-1148,directional antenna
+E-1149,omnidirectional antenna
+E-1150,parabolic antenna
+E-1151,phased array antenna
+E-1152,helical antenna
+E-1153,antenna control system
+E-1154,four-axis control system
+E-1155,AZ axis
+E-1156,EL axis
+E-1157,control platform
+E-1158,sensor
+E-1159,gyrocompass
+E-1160,mechanical tracking
+E-1161,electronic tracking
+E-1162,step tracking method
+E-1163,C ship station
+E-1164,B/F ship station
+E-1165,satellite antenna radome
+E-1166,MF/HF transceiver
+E-1167,DSC terminal
+E-1168,NBDP terminal
+E-1169,T antenna
+E-1170,inverted-L antenna
+E-1171,Mast Vertical Antenna
+E-1172,Automatic Antenna Tuning Unit
+E-1173,VHF Communication Equipment
+E-1174,Weather Facsimile Receiver
+E-1175,Thermal Head
+E-1176,Thermosensitive Recording Head
+E-1177,Receiving Antenna
+E-1178,Routine Inspection and Maintenance of C Ship Station
+E-1179,Routine Inspection and Maintenance of B/F Ship Station
+E-1180,Maintenance and Care of Inmarsat Ship Station Antenna
+E-1181,Routine Maintenance of MF/HF Transceiver
+E-1182,Routine Maintenance of DSC Terminal
+E-1183,Routine Maintenance of NBDP Terminal
+E-1184,Maintenance of Combined Radio Antenna
+E-1185,Routine Maintenance of VHF Communication Equipment
+E-1186,Routine Maintenance of Weather Facsimile Receiver
+E-1187,Precautions for Ship Station Power-On
+E-1188,Precautions for Antenna Radome
+E-1189,Precautions for Antenna Safety Distance
+E-1190,Precautions for Link Test
+E-1191,Precautions for Telephone Distress Test
+E-1192,Precautions for Commissioning New Ship Station
+E-1193,Precautions for Test Call
+E-1194,Precautions for Recording Paper Installation
+E-1195,Floppy Disk
+E-1196,Hand Bellows
+E-1197,Recording Paper
+E-1198,Ship Power Station
+E-1199,Main Switchboard
+E-1200,Brushed Synchronous Generator
+E-1201,brushless synchronous generator
+E-1202,uncontrolled phase-compound voltage regulation system
+E-1203,controlled phase-compound voltage regulation system
+E-1204,thyristor excitation voltage regulation system
+E-1205,brushless excitation generator voltage regulation system
+E-1206,DW14 circuit breaker
+E-1207,ship power grid
+E-1208,daily maintenance and servicing of generator
+E-1209,maintenance and servicing of generator bearing
+E-1210,maintenance of excitation system
+E-1211,precautions for shore power connection
+E-1212,generator prime mover
+E-1213,generator stator winding
+E-1214,excitation system
+E-1215,cable junction box
+E-1216,phase-shifting reactor
+E-1217,rectifier
+E-1218,phase-compound transformer
+E-1219,setting resistor
+E-1220,resonant capacitor
+E-1221,linear reactor
+E-1222,generator slip ring
+E-1223,brush
+E-1224,brush holder
+E-1225,brush pigtail
+E-1226,generator bearing
+E-1227,generator shaft
+E-1228,main switch
+E-1229,undervoltage release device
+E-1230,shunt release device
+E-1231,Overcurrent protection device
+E-1232,Arc extinguishing device
+E-1233,Auxiliary contact
+E-1234,Control and signal indication circuit
+E-1235,AOJ-1s overcurrent trip unit
+E-1236,Reverse power relay
+E-1237,Switchboard-type insulation resistance meter
+E-1238,Shore power box
+E-1239,Power system single-phase ground fault
+E-1240,Power system low insulation resistance fault
+E-1241,Generator voltage fails to build up normally
+E-1242,Generator voltage below rated value
+E-1243,Generator voltage above rated value
+E-1244,Generator suddenly stops generating during operation
+E-1245,Generator voltage drops sharply when load increases
+E-1246,Generator overheating
+E-1247,Generator bearing overheating
+E-1248,Generator main switch fails to close
+E-1249,No voltage on network after main switch closes
+E-1250,Main switch trips during operation after closing
+E-1251,Main switch trips easily due to hull vibration
+E-1252,Reverse power relay malfunction
+E-1253,Generator overload protection trip
+E-1254,Generator undervoltage protection trip
+E-1255,Generator reverse power protection trip
+E-1256,Generator external short-circuit fault
+E-1257,Lighting network ground fault
+E-1258,Equipment internal fault
+E-1259,Improper operation
+E-1260,Adverse environmental conditions
+E-1261,Accident
+E-1262,Synchronous generator operating parameter misalignment
+E-1263,No residual magnetism or insufficient residual magnetism
+E-1264,Excitation winding open circuit
+E-1265,"Generator slip rings corroded or blackened, non-conductive"
+E-1266,Brush stuck in brush holder or brush pigtail broken
+E-1267,Linear reactor without air gap or air gap too small
+E-1268,Voltage regulator rectifier element broken down or open-circuited
+E-1269,Wiring error
+E-1270,Generator residual magnetism voltage polarity opposite to rectifier output voltage
+E-1271,"Connection between reactor, resonant capacitor and phase-compounding transformer broken"
+E-1272,Resonant capacitor short circuit
+E-1273,Phase-shifting reactor air gap too small
+E-1274,"One phase of reactor, rectifier or phase-compounding transformer open-circuited"
+E-1275,Setting resistor too small
+E-1276,Speed too low
+E-1277,Generator excitation winding open circuit
+E-1278,Reactor or phase-compounding transformer tap changed
+E-1279,Voltmeter error
+E-1280,Phase-shifting reactor air gap too large
+E-1281,"Setting resistor sliding contact burned, corroded, poor contact, or resistor burnt open"
+E-1282,Rectifier breakdown
+E-1283,No excitation current in excitation winding circuit
+E-1284,"Reactor core loose, reducing air gap"
+E-1285,Reactor or phase-compounding transformer coil short circuit
+E-1286,Resonant capacitor broken down
+E-1287,"One phase of phase-shifting reactor, rectifier or phase-compounding transformer open-circuited"
+E-1288,Open circuit in rectifier
+E-1289,Current winding and voltage winding polarity of phase-compounding transformer inconsistent
+E-1290,Poor performance of prime mover governor
+E-1291,Stator core displacement
+E-1292,Long-term overload
+E-1293,Excitation winding or stator winding short circuit
+E-1294,Three-phase load imbalance
+E-1295,Stator-rotor rubbing
+E-1296,Severe bearing wear
+E-1297,"Excess, insufficient, or deteriorated lubricating oil (grease)"
+E-1298,Improper assembly of motor end cover or bearing cover
+E-1299,Poor generator set assembly
+E-1300,Generator shaft bending
+E-1301,Undervoltage release fails to pull in normally
+E-1302,"Severe wear of trip mechanism, fails to latch"
+E-1303,Overcurrent (or electromagnetic) release misadjusted (tripping value too low)
+E-1304,Thermal release not reset after tripping
+E-1305,"Main contact burnt, moving and fixed contacts not touching"
+E-1306,Moving contact loose or broken wire
+E-1307,Undervoltage release armature fails to latch trip shaft
+E-1308,"Aged trip mechanism, fails to latch"
+E-1309,Overcurrent (or electromagnetic) release misadjusted (tripping value too low)
+E-1310,Undervoltage coil series resistance too large
+E-1311,Undervoltage release return spring force too large
+E-1312,Sudden load increase causing undervoltage tripping
+E-1313,Overload relay delay too short or no delay action
+E-1314,"Undervoltage coil resistance too large causing weak electromagnetic pull, or core return spring force too large causing poor core pull-in"
+E-1315,Free trip mechanism fails to latch
+E-1316,"Overcurrent release misadjusted, tripping current too low, close to tripping value at normal load current"
+E-1317,Wiring not in accordance with requirements
+E-1318,"Voltage coil or current coil burnt, reverse power relay ineffective"
+E-1319,Magnetize and build up voltage using external DC power supply
+E-1320,Check for looseness or broken wire from rectifier to excitation winding
+E-1321,Polish slip ring surface with fine sandpaper
+E-1322,"Inspect and repair brushes, brush holders and brush pigtails"
+E-1323,Adjust air gap to proper size
+E-1324,Inspect and replace failed rectifier elements
+E-1325,Carefully inspect wiring and correct misconnections
+E-1326,Swap excitation winding connections
+E-1327,Inspect wiring and reconnect
+E-1328,Replace capacitor
+E-1329,Adjust to increase air gap
+E-1330,"Check wiring among the three for looseness or breakage, then reconnect and tighten"
+E-1331,Increase setting resistance
+E-1332,Raise speed to rated value and verify frequency
+E-1333,"Inspect excitation winding, repair or replace"
+E-1334,"Inspect and verify voltage, rewire tap connections"
+E-1335,Calibrate voltmeter
+E-1336,Reduce air gap as required
+E-1337,Inspect and repair or replace resistor
+E-1338,Readjust as required
+E-1339,Correct voltmeter
+E-1340,Inspect and replace failed rectifier elements
+E-1341,Check wiring from rectifier to excitation winding for looseness or breakage
+E-1342,Set air gap to required value and tighten core
+E-1343,Inspect and repair or replace coil
+E-1344,Replace failed capacitor
+E-1345,Locate open circuit in wiring among the three and repair
+E-1346,Inspect rectifier and its wiring and restore connection
+E-1347,Swap current winding or voltage winding to match polarity
+E-1348,Service governor
+E-1349,Return core to original position and secure
+E-1350,Observe generator output current and power and keep below rated values
+E-1351,Inspect motor stator and rotor windings and repair short-circuited windings
+E-1352,Check for single-phase high-power loads or single-phase operation of motors
+E-1353,"Check motor bearings, shaft, and rotor core for looseness"
+E-1354,Replace bearings
+E-1355,Inspect and add or change oil; oil level must not exceed 2/3 of bearing chamber space
+E-1356,Reinstall properly
+E-1357,Realign and reinstall
+E-1358,Straighten the shaft
+E-1359,"First check whether the voltage across the undervoltage coil is normal; if normal, check whether the coil is open-circuited, whether terminals are loose, whether the trip spring tension is normal, and whether the mechanism is jammed; if coil voltage is abnormal, check the undervoltage coil circuit and the series resistor"
+E-1360,"Inspect trip mechanism, adjust corresponding bolts or replace"
+E-1361,Calibrate and adjust to required value
+E-1362,Wait 1~2 s for thermal element to reset
+E-1363,"Inspect, repair, or replace main contacts"
+E-1364,Inspect wiring and connections; connect or tighten screws
+E-1365,Inspect trip mechanism
+E-1366,Check series resistor and wiring for integrity
+E-1367,Check and reduce spring tension
+E-1368,"Check voltage regulator and governor characteristics, or reduce undervoltage trip spring tension"
+E-1369,Check and adjust to specified delay value
+E-1370,Increase electromagnetic attraction or reduce spring counterforce
+E-1371,Inspect and repair
+E-1372,Adjust overcurrent trip
+E-1373,Correct the wiring
+E-1374,Inspect and replace coil
+E-1375,Troubleshooting procedure for lighting network ground faults
+E-1376,Elevator
+E-1377,Refrigeration equipment
+E-1378,Air-conditioning equipment
+E-1379,Refrigerated container
+E-1380,Traction machine maintenance
+E-1381,traction machine lubrication
+E-1382,braking system maintenance
+E-1383,speed governor inspection
+E-1384,car door and automatic door mechanism inspection and adjustment
+E-1385,safety gear inspection
+E-1386,guide rail and guide shoe inspection
+E-1387,buffer inspection
+E-1388,landing door mechanical-electrical interlock inspection
+E-1389,traction steel wire rope inspection
+E-1390,traveling cable inspection
+E-1391,counterweight device inspection
+E-1392,hoistway cleaning
+E-1393,"inspection of conduits, trunking, junction boxes and wiring"
+E-1394,refrigeration and air-conditioning control system maintenance
+E-1395,refrigerated container electrical control system maintenance
+E-1396,regulations to be observed during elevator repair and maintenance
+E-1397,regulations for using insulation resistance meter during elevator repair and maintenance
+E-1398,safety measures before braking system adjustment
+E-1399,safety measures before brake lining thickness measurement
+E-1400,safety measures during inspection and repair
+E-1401,traction sheave
+E-1402,brake wheel
+E-1403,brake shoe
+E-1404,speed governor
+E-1405,safety gear
+E-1406,guide rail
+E-1407,buffer
+E-1408,traction steel wire rope
+E-1409,traveling cable
+E-1410,counterweight device
+E-1411,Failure to start
+E-1412,Low speed under load
+E-1413,Abnormal noise or excessive vibration during operation
+E-1414,Motor overheating or smoking
+E-1415,Bearing overheating
+E-1416,Motor casing energized
+E-1417,Compressor control failure
+E-1418,Excessive cold storage temperature deviation
+E-1419,Fan fault
+E-1420,Failure of automatic defrosting
+E-1421,Compressor failure to start
+E-1422,Large temperature fluctuation
+E-1423,Compressor unit failure to start
+E-1424,Failure of automatic defrosting
+E-1425,Large temperature fluctuation inside cabinet
+E-1426,Power supply not connected
+E-1427,Control equipment wiring error
+E-1428,Undervoltage
+E-1429,"Stator winding phase-to-phase short circuit to ground, wiring error, stator winding short circuit"
+E-1430,"Excessive load or brake not released, reducer fault"
+E-1431,Mechanical friction
+E-1432,Two-phase operation
+E-1433,Bearing damage
+E-1434,Bent shaft extension
+E-1435,Loose coupling connection
+E-1436,Poor ventilation and heat dissipation
+E-1437,Insufficient lubricating oil with impurities
+E-1438,Poor grounding
+E-1439,"Winding damp, insulation damage or dirty terminal board"
+E-1440,Lead wire insulation worn through
+E-1441,"Check switches, fuses, and contact pairs to locate the fault point"
+E-1442,Verify wiring diagram and correct
+E-1443,"Check supply voltage; if too low, raise appropriately"
+E-1444,Locate short-circuit or open-circuit points and repair; correct wiring if miswired
+E-1445,"Reduce load; separate motor from reducer; if motor runs normally, inspect reducer"
+E-1446,Check supply voltage
+E-1447,Check stator current and reduce load
+E-1448,Inspect broken bars and open solder joints and repair
+E-1449,Check rotor-stator air gap and brake wheel-brake band clearance; find cause of rubbing and correct
+E-1450,"Power off and reclose; if it fails to start, one phase may be open; check power supply and motor and repair"
+E-1451,Replace damaged bearing
+E-1452,Replace shaft
+E-1453,Check looseness and tighten coupling
+E-1454,Check stator current; reduce load if overloaded
+E-1455,Check control device contacts and fuses
+E-1456,Check voltage; raise appropriately if too low
+E-1457,Locate short-circuit and ground fault points and repair
+E-1458,"Check bearing and bearing housing for looseness, shaft for bending, and stator-rotor assembly for defects; repair"
+E-1459,Remove obstructions to ventilation; clean dust and dirt from coil ends
+E-1460,Replace bearing
+E-1461,Find cause and take corrective measures
+E-1462,"Dry stator winding, repair damaged insulation, clean dirt from terminal board"
+E-1463,Repair or replace lead wires

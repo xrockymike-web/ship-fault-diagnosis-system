@@ -1,0 +1,50 @@
+# experiment/.gitignore
+# 只忽略“可再生产物/中间文件”；题库、代码、最终报告、判分汇总要跟踪。
+
+# 本地凭据：只保留 .env.example
+.env
+.env.*
+!.env.example
+config.local.yaml
+
+# Python
+.venv*/
+__pycache__/
+*.py[cod]
+
+# 每变体的构建产物与依赖
+code/systems/*/bin/
+code/systems/*/query/frontend/node_modules/
+code/systems/*/query/frontend/dist/
+code/systems/*/query/frontend/*.tsbuildinfo
+
+# 题目草稿（最终 questions.json 要跟踪）
+data_performance/*/question/**/_drafts/
+
+# 逐题原始运行（中间文件，全部保留在磁盘，但不进 git）
+data_performance/*/answer/*/*/runs/
+data_performance/*/answer/*/*/_appdir/
+data_performance/*/answer/*/*/logs/
+data_performance/*/answer/*/*/_runtime/
+
+# 基线资产：naive 向量缓存 / LightRAG 索引（可再生；索引已归档 backup）
+baselines/
+
+# 运行日志与临时区
+data_performance/*/report/logs/
+temp/
+tmp/
+logs/
+
+
+# --- Public-release policy (2026-10-26): evaluation internals are NEVER committed ---
+# gold question sets, per-point verdicts, scores, judge outputs, human review, cost ledger
+data_performance/*/question/
+data_performance/*/answer/
+data_performance/*/report/
+data_performance/*/score/
+data_performance/paper/
+data_performance/human_review/
+data_performance/GOLD_NOTES.md
+data_performance/compare_two_samples.md
+data_performance/cost_ledger.jsonl

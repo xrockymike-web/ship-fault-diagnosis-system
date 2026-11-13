@@ -1,0 +1,56 @@
+{
+  "_note": "模型与 llama-server 参数（施工单 §16.2 / §17.2）。gguf 只写文件名，绝对路径由 bootstrap 注入的 environmentDir 拼。ngl=CPU 时的层数（0）；nglGpu=检测到可用 CUDA 设备时用的层数（99=全部卸载到显存），见目标 2 步骤 2.6。目标 2.5：embedding / reranker 两段生效（enabled 默认 true）；backend=auto 跟随 GPU 检测，写 cpu / cuda 可单独锁定（D25-07「只落能选后端」，不做降级规则）。",
+  "answer": {
+    "gguf": "qwen3.0.6B-Q8_0.gguf",
+    "modelDir": "answer",
+    "backend": "auto",
+    "ctx": 8192,
+    "ngl": 0,
+    "nglGpu": 99,
+    "n": 800,
+    "enableThinking": false,
+    "temperature": 0.6,
+    "topP": 0.95,
+    "historyTurns": 3,
+    "historyCharLimit": 4000,
+    "threads": null,
+    "threadsBatch": null,
+    "singleSlot": true
+  },
+  "server": {
+    "host": "127.0.0.1",
+    "port": "dynamic",
+    "portRetry": 3
+  },
+  "embedding": {
+    "enabled": true,
+    "gguf": "Qwen3-Embedding-0.6B-Q8_0.gguf",
+    "ctx": 2048,
+    "backend": "auto",
+    "pooling": "last",
+    "embdNormalize": 2,
+    "warmup": "船舶电气设备故障诊断"
+  },
+  "reranker": {
+    "enabled": true,
+    "gguf": "qwen3-reranker-0.6b-q8_0.gguf",
+    "ctx": 2048,
+    "backend": "auto",
+    "pooling": "rank",
+    "warmup": "船舶电气设备故障诊断",
+    "batchSize": 2048,
+    "ubatchSize": 2048,
+    "_batch_note": "🔴 2026-10-06 4.5 实测：rerank 把「问题+段落」当一个序列，默认物理批 512 装不下真实父块（746 token 直接 HTTP 500）→ 放大到 2048。"
+  },
+  "_dial_note": "🔴 顶层值 = **GPU 档**的值（D2-结构「丙」：数字进现有 JSON 的 cpu 覆盖块）。下面 cpu 块只描述 CPU 档的差异；**cuda 档直接用顶层值，不建 cuda 块**。",
+  "cpu": {
+    "answer": {
+      "gguf": "qwen3.0.6B-Q4_K_M.gguf",
+      "modelDir": "answer-q4km"
+    },
+    "reranker": { "enabled": false }
+  },
+  "_cpu_note": "CPU 档两处差异：① 回答模型用 **Q4_K_M**（378.3 MiB，sha256 15E434D8…9F02E，父模型逐位一致；见 19- §7 组2 与 temp/cpuperf/REPORT-q4km-quantization.md）—— 🔴 **抽样人读按负责人 2026-10-12 决定推迟到评测阶段，上线前未做质量对照**；② reranker **服务不启动**（省约 600 MB，12- RR-B1「能力保留 ≠ 常驻加载」）。",
+  "_answer_dial_note": "`answer.backend` = auto｜cpu｜cuda（**强制档开关**；写法与 embedding/reranker 完全一致）。🔴 只在配置文件里，**前端不给用户切**。`answer.threads` / `threadsBatch` 为 null 时自动算：CPU 档 `-t = floor(逻辑核 × 0.75)`、`-tb = 逻辑核`；`singleSlot=true` → 追加 `-np 1`。GPU 档**一个线程参数都不注入**（保持与 v0.3.1 逐字等价）。",
+  "_cores_note": "🔴 2026-10-12 定：**不探测物理核数**（Node 拿不到，调 PowerShell/CIM 会加启动开销且有杀软风险）→ 改用 `-t = floor(逻辑核 × 0.75)`。在有超线程的机器上与本机实测最优的 `min(物理核×1.5, 逻辑核)` **结果完全相同**（8C16T→12、6C12T→9）；无超线程机器上偏保守（6C6T→4，宁小不过订阅）。"
+}

@@ -1,0 +1,6 @@
+# experiment/requirements.txt
+# 说明：除 PyYAML 外全部为 Python 标准库（3.10+；本机实测 3.14.5）。
+# 不引入 requests / openai SDK：HTTP 调用用 urllib，减少供应链与版本漂移。
+# 本地 embedding / 回答模型不在这里（它们随 workspace 部署，不装进 experiment 环境）。
+
+pyyaml>=6.0,<7

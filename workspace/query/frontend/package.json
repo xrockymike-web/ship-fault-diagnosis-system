@@ -1,0 +1,37 @@
+{
+  "name": "ship-diagnosis-frontend",
+  "private": true,
+  "version": "0.5.1",
+  "description": "船舶故障诊断系统 桌面前端（静态原型）",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "build:launcher": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-launcher.ps1",
+    "assemble": "node scripts/assemble.mjs",
+    "package:portable": "node scripts/package-portable.mjs",
+    "package": "node scripts/package-zip.mjs",
+    "smoke:retrieval": "node scripts/smoke-retrieval.cjs",
+    "smoke:text": "node scripts/smoke-retrieval3.mjs --only text",
+    "smoke:graph": "node scripts/smoke-retrieval3.mjs --only graph",
+    "smoke:3way": "node scripts/smoke-retrieval3.mjs --only all",
+    "audit:answers": "node scripts/audit-answers.cjs",
+    "test": "vitest run",
+    "app": "npm run build && node scripts/assemble.mjs --launch",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "44.4.5",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vite-plugin-electron": "^0.28.8",
+    "vite-plugin-electron-renderer": "^0.14.6",
+    "vitest": "^3.2.4"
+  }
+}

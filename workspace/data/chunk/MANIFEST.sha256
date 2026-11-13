@@ -1,0 +1,13 @@
+# 知识库中间产物校验清单（build_chunks.py 生成；无时间戳以保证可复现）
+# book.sha256(归一化前) = d0053dd1334fb9c7d4a88e66b8decf869711f63f312ed7f17cc7cbdea7042044
+# 说明: 切点由 语义分 + LLM 判决 决定；字数仅作约束
+e7efe22e84400bf5ee16f9508f569dfb853ea80fbc54dc27e0146ec101eebfb0  2084700  1332  chunk/chunks.jsonl
+c31420df9fdb31fa952089295b3778ba183a085ae655bd4dbfed223a38233f81  4034604  1332  chunk/chunks_filled.jsonl
+9789538f9211eaa2621bc55536b58f9ab9cec5ef395e3915d19ebd7f984789b7  155542  1332  chunk/chunk_spans.jsonl
+0acc34061f44c0dda14243482c0d534d60cc4dcdb37f8467e4f3e7d49fba2c33  1681075  7479  chunk/segments.jsonl
+5a02cf1cae123295b4af64fa5a398345b9ad87ebe7c1af54328e64cece264d7b  1147  66  chunk/chunk_stats.json
+0acc34061f44c0dda14243482c0d534d60cc4dcdb37f8467e4f3e7d49fba2c33  1681075  7479  chunk/sem/sentence_index.jsonl
+64ba1f85d7808092dc7bc85eee82feed8b4928a5013d966099393f24109e84b1  472408  7478  chunk/sem/boundary_scores.jsonl
+7e992d54c13758ba9c7c2b4e956a0c87db4a97f3ace8e8527e6ff9b75debbef5  170  8  chunk/sem/meta.json
+bab4fccb3256f1ea4fed3be448d290903040a77687dc2a8934f43f489fc9996f  776096  7478  chunk/decisions/boundary_llm_qwen3.8-flash_03ea9d333d0e.jsonl
+1188e43c203599cedb2f8943c023117fedbbe52a691e142ca27d944bf953e45d  2931892  1332  chunk/chunks_en.jsonl

@@ -1,0 +1,49 @@
+{
+ "template_version": "p23-v1",
+ "model_id": "Qwen3-Embedding-0.6B-Q8_0",
+ "backend": "cuda",
+ "concurrency": 8,
+ "batch": 32,
+ "max_chars": 1200,
+ "classes": {
+  "chunk": {
+   "name": "chunk",
+   "total": 1065,
+   "encoded": 1065,
+   "present": 1065,
+   "failed": []
+  },
+  "entity": {
+   "name": "entity",
+   "total": 1463,
+   "encoded": 0,
+   "present": 1463,
+   "failed": []
+  },
+  "triple": {
+   "name": "triple",
+   "total": 1116,
+   "encoded": 0,
+   "present": 1116,
+   "failed": []
+  }
+ },
+ "inputs": {
+  "chunk": {
+   "file": "workspace/data/chunk/chunks_filled.jsonl",
+   "sha256_16": "8397607a235e1cee",
+   "rows": 1065
+  },
+  "entity": {
+   "file": "workspace/data/graph/entities.csv",
+   "sha256_16": "60d6583e02d51c3f",
+   "rows": 1463
+  },
+  "triple": {
+   "file": "workspace/data/graph/triples.csv",
+   "sha256_16": "268c7a2447f215fa",
+   "rows": 1116
+  }
+ },
+ "elapsed_ms": 44622
+}

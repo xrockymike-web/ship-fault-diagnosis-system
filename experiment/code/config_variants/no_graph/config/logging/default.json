@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "archive": {
+    "enabled": true,
+    "dir": "qa-log",
+    "retentionDays": null,
+    "maxTotalMB": null,
+    "_note": "目标5·5.1 每轮问答档案（D26）：默认开；永不自动删（两个上限默认 null）。改这里不用改代码。"
+  }
+}

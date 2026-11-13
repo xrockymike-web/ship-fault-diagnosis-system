@@ -1,0 +1,188 @@
+{
+ "manifest_version": "1.0",
+ "product": "船舶故障诊断与维护系统",
+ "generated_at": "2026-10-25 21:40:32",
+ "generator": "workspace/build/index/make_manifest.py",
+ "schema_version": 1,
+ "application_id": "0x53484950",
+ "delivery": {
+  "mode": "full",
+  "trimming": "none",
+  "note": "2026-10-17 版权脱钩已完成：assets 表（上游来源表号/图注/章节/真页码）与所有上游来源溯源列已删除；块/实体/三元组编号已换新体系（TXT/PRT/TBL-#### / E-#### / T-####）"
+ },
+ "stores": {
+  "chunk": {
+   "file": "chunk/chunk.sqlite",
+   "sha256": "ef944b193b041795d612761af0bb4c34f701c0fa2b1bd9af8121ef09f3373db6",
+   "bytes": 26755072,
+   "tables": [
+    "chunks",
+    "chunks_fts",
+    "chunks_fts_config",
+    "chunks_fts_data",
+    "chunks_fts_docsize",
+    "chunks_fts_en",
+    "chunks_fts_en_config",
+    "chunks_fts_en_data",
+    "chunks_fts_en_docsize",
+    "chunks_fts_en_idx",
+    "chunks_fts_idx",
+    "chunks_fts_tri",
+    "chunks_fts_tri_config",
+    "chunks_fts_tri_data",
+    "chunks_fts_tri_docsize",
+    "chunks_fts_tri_idx",
+    "documents",
+    "vectors"
+   ],
+   "rows": {
+    "chunks": 1332,
+    "chunks_fts": 1332,
+    "chunks_fts_config": 1,
+    "chunks_fts_data": 216,
+    "chunks_fts_docsize": 1332,
+    "chunks_fts_en": 1332,
+    "chunks_fts_en_config": 1,
+    "chunks_fts_en_data": 1684,
+    "chunks_fts_en_docsize": 1332,
+    "chunks_fts_en_idx": 2133,
+    "chunks_fts_idx": 212,
+    "chunks_fts_tri": 1332,
+    "chunks_fts_tri_config": 1,
+    "chunks_fts_tri_data": 907,
+    "chunks_fts_tri_docsize": 1332,
+    "chunks_fts_tri_idx": 904,
+    "documents": 1,
+    "vectors": 1065
+   }
+  },
+  "graph": {
+   "file": "graph/graph.sqlite",
+   "sha256": "753064d76f63a935400ad0b7c9b72f4ecb56f495764a69aed6e79fc97e9e4703",
+   "bytes": 15806464,
+   "tables": [
+    "chunk_entities",
+    "cooccurrence_edges",
+    "entities",
+    "entities_fts",
+    "entities_fts_config",
+    "entities_fts_content",
+    "entities_fts_data",
+    "entities_fts_docsize",
+    "entities_fts_idx",
+    "labels_en",
+    "relation_types",
+    "triples",
+    "vectors"
+   ],
+   "rows": {
+    "chunk_entities": 10340,
+    "cooccurrence_edges": 15988,
+    "entities": 1463,
+    "entities_fts": 1463,
+    "entities_fts_config": 1,
+    "entities_fts_content": 1463,
+    "entities_fts_data": 98,
+    "entities_fts_docsize": 1463,
+    "entities_fts_idx": 96,
+    "labels_en": 18,
+    "relation_types": 11,
+    "triples": 1116,
+    "vectors": 2579
+   }
+  }
+ },
+ "totals": {
+  "stores": 2,
+  "declared_tables": 12,
+  "vectors": 3644
+ },
+ "vectors": {
+  "dim": 1024,
+  "dtype": "float32-little-endian",
+  "layout": "每库一张 vectors 表（D22）；obj_type 仅 graph 库有（entity / triple）",
+  "by_store": {
+   "chunk": 1065,
+   "graph": 2579
+  },
+  "truncated": 0,
+  "determinism": {
+   "bitwise_reproducible": false,
+   "measured": "同进程同批同输入连续两次 max|Δ|≈4.4e-3、余弦 0.99976（CUDA）；CPU 亦如此（4.16e-3 / 0.99970）",
+   "criterion": "余弦 >= 0.999"
+  }
+ },
+ "params": {
+  "chunking": {
+   "source": "chunks_filled.jsonl",
+   "blocks_total": 1332,
+   "sub_vectorized": 1065,
+   "parents": 267,
+   "kind_set": [
+    "parent",
+    "text"
+   ],
+   "has_page_columns": false,
+   "chunker": {
+    "version": "semantic-4gate",
+    "book_sha256": "d0053dd1334fb9c7d4a88e66b8decf869711f63f312ed7f17cc7cbdea7042044",
+    "params": {
+     "alpha_sem": 0.6,
+     "beta_llm": 0.4,
+     "gamma_para": 0.15,
+     "lambda_len": 8.0,
+     "per_parent": 4,
+     "child_min": 250,
+     "child_max": 450,
+     "child_hard": 520,
+     "child_floor": 120
+    },
+    "text_in_range_250_450": 80.3
+   },
+   "text_seg": "jieba 分词（空格连接）"
+  },
+  "graph": {
+   "entities": 1463,
+   "relation_types": 11,
+   "triples": 1116,
+   "chunk_entities": 10340,
+   "cooccurrence_edges": 15988,
+   "cooccurrence_scope": "只用子块、无向、weight = 共享子块数（照 4.0.1；2026-10-19 迁入）",
+   "note": "第一档有效图（只掉头 + 去重）；chunk_entities = entities.chunk_ids 转置 ∪ 子块父块提升（A3，建库时生成）；cooccurrence_edges = entities.chunk_ids 的子块共现物化（A1）"
+  },
+  "embedding": {
+   "model_id": "Qwen3-Embedding-0.6B-Q8_0",
+   "template_version": "p23-v1",
+   "backend": "cuda",
+   "concurrency": 8,
+   "batch": 32,
+   "max_chars": 1200,
+   "elapsed_ms": 44622
+  }
+ },
+ "inputs": {
+  "chunk/chunks_filled.jsonl": "c31420df9fdb31fa",
+  "graph/entities.csv": "2dc4abbd47f85a8f",
+  "graph/triples.csv": "780287a79c839ede",
+  "graph/relations.csv": "bf22be3e798fd7a3"
+ },
+ "layers": {
+  "CORPUS-0001": "layer-a_open（本项目自建语料；原始素材不随包分发）"
+ },
+ "notes": [
+  "entities_fts.aliases 置空（无数据源）",
+  "entities 不含 source 列、triples 不含「内容来源」列",
+  "chunks.text_seg = jieba 分词；chunks_fts(unicode61) / chunks_fts_tri(trigram) 均为 content=\"chunks\" 外部内容表",
+  "两库 application_id = 0x53484950 / user_version = 1；运行期只读",
+  "表数按「声明名」核（FTS5 另有影子表）",
+  "2026-10-19 三库 → 两库：原第三库整体删除，cooccurrence_edges 迁入 graph 库；表数 15 → 12（chunk 5 + graph 7），向量 3467 → 3389",
+  "2026-10-17 版权脱钩：删 assets 表（上游来源表号/图注/章节/真页码）→ 表数 16 → 15；删 chunks.{section,asset_id,refs}、entities/triples.{chapter,source_ptr,status,batch_id}、relation_types.domain、原第三库的 {parent_id,batch_id,status,evidence_chunk_ids} 四列"
+ ],
+ "i18n": {
+  "enabled": true,
+  "chunks_en": 1332,
+  "entities_en": 1463,
+  "labels_en": 18,
+  "vectors_en": 0
+ }
+}

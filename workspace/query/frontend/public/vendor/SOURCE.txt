@@ -1,0 +1,7 @@
+d3.v7.min.js
+================
+版本    : d3 7.8.5 (official minified release)
+上游    : https://github.com/d3/d3/releases/tag/v7.8.5
+许可    : ISC (https://github.com/d3/d3/blob/main/LICENSE)
+位置    : frontend/public/vendor/d3.v7.min.js
+用途    : knowledge-graph visualisation; vendored because the application must run fully offline

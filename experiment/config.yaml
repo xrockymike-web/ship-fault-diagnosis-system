@@ -1,0 +1,49 @@
+# experiment/config.yaml
+# 只放配置，不放 key；key 从 experiment/.env 读取。
+
+paths:
+  workspace: ../workspace
+  data_performance: data_performance
+  cost_ledger: data_performance/cost_ledger.jsonl
+
+budget:
+  currency: CNY
+  usd_cny: 7.3                 # 保守汇率；用于把 USD 价换算成 CNY
+  hard_stop: true
+  per_model_cny:
+    deepseek-flash: 32.0       # 2026-10-24 第二样本：29→32（四臂重判 1,456 次 ≈ ¥2.3）
+    qwen3.8-flash: 5.0         # 单模型硬上限：¥5
+  max_calls:
+    deepseek-flash: 19800       # 2026-10-24 第二样本：18,200→19,800
+    qwen3.8-flash: 3000
+  on_exceed: stop              # stop | ask；默认停，不静默换模型
+
+models:
+  judge:
+    provider: deepseek
+    model: deepseek-flash
+    base_url_env: DEEPSEEK_BASE_URL
+    api_key_env: DEEPSEEK_API_KEY
+    thinking: disabled         # 判分不要 CoT
+    temperature: 0
+    max_output_tokens: 256
+    response_format: json_object
+
+  build:
+    provider: dashscope
+    model: qwen3.8-flash
+    base_url_env: DASHSCOPE_BASE_URL
+    api_key_env: DASHSCOPE_API_KEY
+    temperature: 0
+    max_output_tokens: 2048
+
+# 保守价：DeepSeek 用高峰价；qwen3.8-flash 用北京价。
+pricing_usd_per_mtok:
+  deepseek-flash:
+    input: 0.30
+    output: 1.20
+    cache_hit: 0.006
+  qwen3.8-flash:
+    input: 0.113
+    output: 0.382
+    cache_hit: 0.014

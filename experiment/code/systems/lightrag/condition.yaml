@@ -1,0 +1,63 @@
+# LightRAG 适配说明（条件身份 + 口径）
+
+> 本目录是 **LightRAG 基线条件**，与 `ours` / `no-graph` 物理分开。
+> 源码在 `bin/lightrag-1.5.7/`，版本与来源在 `VERSION`；**没有修改 LightRAG 源码**（`patches/` 为空）。
+
+## 1. 口径（《实验总纲》§5.3）
+
+| 项 | 取值 | 说明 |
+|---|---|---|
+| 版本 | `lightrag-hku 1.5.7` | PyPI sdist，sha256 见 `VERSION`；`bin/` 为 vendored 源码 |
+| 建库 LLM | `qwen3.8-flash`（百炼） | 与 ours 建库同模型；**关思考**（`enable_thinking=false`） |
+| 运行期 embedding | 本地 `Qwen3-Embedding-0.6B-Q8_0`，1024 维 | llama-server `127.0.0.1:18081`，`--pooling last --embd-normalize 2` |
+| 运行期回答 | 本地 `Qwen3-0.6B-Q8_0` | llama-server `127.0.0.1:18082`，ctx 8192 |
+| 语料 | `workspace/data/document/book.txt` | 与 ours 同一份 |
+| 切块 | LightRAG 默认：`chunk_token_size=1200`、`chunk_overlap_token_size=100` | pilot 失败才回退 324 个 PRT 父块（**未触发**） |
+| 检索 | `QueryParam(mode="mix")` | LightRAG 默认混合模式 |
+| 上下文预算 | `top_k=20, chunk_top_k=6, max_entity_tokens=800, max_relation_tokens=1200, max_total_tokens=5250, enable_rerank=False` | 本地 8k ctx 的部署约束；未接 rerank 模型 |
+| gleaning | **`entity_extract_max_gleaning=0`** | **偏离默认（1）**：为把 qwen 建库压在 ¥5 内；实测 ¥0.0083/块 |
+
+## 1.1 成本实测（2026-10-17）
+
+| 探路 | 输入 | 输出 | 花费 | 每块 | 耗时 |
+|---|---:|---:|---:|---:|---:|
+| 23 chunk，gleaning=0 | 158k | 85k | **¥0.1907** | ¥0.0083 | 127 s（8 并发） |
+
+全书 331,555 字符 / 389,537 token / **254 块**（LightRAG 默认切块 1200/100），
+最终索引：**3456 实体 / 4338 关系 / 85 MB**；建库总 API 花费 **¥2.89**（含 3 次探路与 1 次中途重启；
+单看最终索引约 ¥2.4），在 qwen ¥5 上限内。建库耗时约 12 分钟（16 并发抽取 + 本地向量 flush）。
+
+## 1.2 查询实测（pilot 12 道领域题）
+
+- 12/12 `completed`，0 失败，单题 0.2–7.0 s；
+- 查询期 LLM 全部本地，**API 花费 ¥0**；
+- 每题上下文约 8–12 实体 / 20–40 关系 / 3 个 chunk（受 8k ctx 预算约束）。
+
+## 2. 公平性披露（写论文时要带上）
+
+- ours = 人工本体 + qwen3.8-flash 辅助 + 规则 + 人工复核；
+- LightRAG = 全自动抽取；
+- 因此这是**系统级对比**，不是同算法不同参数的对比；
+- 切块策略不同（LightRAG 默认切块 vs ours 324 父块），论文如实披露。
+
+## 3. 运行
+
+```powershell
+# 1) 本地两个 llama-server（embedding / answer）
+#    见 data_performance/llama_embedding.log、llama_answer.log
+# 2) 探路 / 建库 / 查询
+$env:PYTHONPATH = 'experiment/code/systems/lightrag/bin/lightrag-1.5.7'
+experiment\.venv-lightrag\Scripts\python.exe experiment\code\systems\lightrag\runner.py --probe 10 --reset
+experiment\.venv-lightrag\Scripts\python.exe experiment\code\systems\lightrag\runner.py --build
+experiment\.venv-lightrag\Scripts\python.exe experiment\code\systems\lightrag\runner.py --query --stage pilot
+```
+
+产物：`experiment/baselines/lightrag/working_dir/`（索引，git 忽略；已归档到 backup/temp/experiment_baselines_lightrag_20261024/）、
+`data_performance/answer/lightrag/<stage>/`（`runs/<题号>/r1/`、`answer-content.json`、`stage_meta.json`）。
+
+## 4. 成本与红线
+
+- 建库每次 qwen 调用前过 `budget.check()`，调用后写 `cost_ledger.jsonl`；
+- 进程内保险丝 ¥4.85（单模型上限 ¥5），触顶抛 `BuildBudgetStop`；
+- 查询期 LLM 全部本地，不产生 API 费用；
+- 不打印 key；不改 `workspace/**`；不改题集/条件/判分口径。

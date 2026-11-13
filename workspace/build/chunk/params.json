@@ -1,0 +1,33 @@
+{
+ "_note": "切块参数（4 道闸门：规则→语义→LLM→尺寸；父块默认 4 子块）。改这里 = 改切块规则，必须重出块并重跑验收。",
+ "version": "semantic-4gate",
+ "child": {
+  "target_min": 250,
+  "target_max": 450,
+  "hard_max": 520,
+  "long_para_split_at": 460,
+  "sent_group": 400
+ },
+ "parent": {
+  "children_per_parent": 4,
+  "tail_two_allowed": true,
+  "tail_one_split_into_two": true,
+  "parent_max_chars": 1700
+ },
+ "ids": {
+  "text": "TXT-%04d",
+  "parent": "PRT-%04d"
+ },
+ "order": "book order (no reordering, no cross-paragraph merge)",
+ "kind": [
+  "text",
+  "parent"
+ ],
+ "removed": [
+  "kind=table",
+  "page_start/page_end",
+  "section",
+  "asset_id",
+  "refs"
+ ]
+}

@@ -1,0 +1,7 @@
+node_modules
+dist
+dist-electron
+*.local
+
+# scripts/ 下以点开头的都是本地验证产物（探针结果、运行日志、抓图）——一律不进库
+scripts/.*

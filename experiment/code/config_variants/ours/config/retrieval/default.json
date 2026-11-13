@@ -1,0 +1,118 @@
+{
+  "_note": "检索参数（A11：单文件分组）。改数字不用改代码 —— 运行时只读本文件；用户覆盖可放 data/runtime/config/retrieval/。",
+  "_version": "1.4",
+  "_changelog": "1.4（2026-10-22 重建）：① 删 tableLimit —— kind='table' 已下线（语料无表格，旧库那 72 块是槽位继承的误标）；② finalK 6→3、charLimit→6000，GUI 与实验同源同值（P1-1 收口）；③ 重建后父块 p90≈1433、max≈1638，3 条最坏 ≈4914 字，6000 不再触发截断；④ rerankPool 保持 5（≥ finalK=3，第 1–3 条全部经过 reranker）。 1.3（2026-10-19）：① 删 `common.softBiasFactor`；② `_uncalibrated` 去掉对应项；③ 检索 三路 → **两路**（文本 + 图），串行最坏 16000 ms → 12000 ms（见 overallTimeout 死键说明）。 1.2（2026-10-12，RR-B1 落地 + 死键清理）：① `reranker.enabled` 顶层 **false → true** —— 顶层值即 **GPU 档**的值，GPU 三处打分正式启用；新增 `cpu` 覆盖块把 CPU 档置 false；② `common.overallTimeoutMs` 加 `_overallTimeoutMs_dead_note`（查实为**死键**，检索实际无总超时，最坏 4×4000 串行 = 16 s，兜底靠前端首字超时）；③ 新增 `_dial_note` / `_cpu_note` 说明分档口径。 1.1（2026-10-11，见 交接/14-检索策略细节定案与落地-10111401）：三路各自打分池值 + 图谱路两处打分共用预算 rerankBudgetMs；reranker.topN 停止被运行期引用（键保留待目标 6 处置）。 另：2026-10-11 实测后按负责人拍板放宽 pathTimeoutMs 3000→4000、rerankBudgetMs 2500→3000（依据见 common._timeout_note）。 第二轮（2026-10-11，14- §3.5）：pathMaxNodes 5→6；通路池改为「长度优先建池 → 池内相似度 → rerank → 展示按长度降序」。",
+  "_uncalibrated_note": "🔴 本文件里所有阈值/权重/惩罚系数/池值都**没有评测集标定**（负责人 2026-10-06 定：评测集暂不做）→ 统一登记在 _uncalibrated。以后标定一个划掉一个。",
+  "common": {
+    "pathTimeoutMs": 4000,
+    "overallTimeoutMs": 10000,
+    "_overallTimeoutMs_dead_note": "🔴 **死键**（2026-10-12 查实）：声明了、也在 _uncalibrated 里，但**全仓没有任何代码读过它** → 检索实际**没有总超时**，最坏 = embed + 文本 + 图 各 4000 ms **串行相加 = 12000 ms**（2026-10-19 后由 16000 降为 12000）。本轮**不删、不接**：检索一旦抛错，qa-core 会退回「纯对话口径」（模型**无证据作答**），加总闸门反而可能把「慢但能用」变成「没证据硬答」。兜底改由**前端首字超时**承担（CPU 45 s / GPU 15 s）。键按项目先例保留并加说明（同 diagnostics.maxHops）。",
+    "questionVectorDim": 1024,
+    "rerankBudgetMs": 3000,
+    "_rerankBudgetMs_note": "🔴 图谱路**两处**打分（种子 + 通路）**共用**这一个预算（负责人 2026-10-11 拍板「可以共用，推荐测试，然后放宽」）：进图谱路时取一次 deadline，每次调用的 timeout = 剩余预算，剩余 ≤0 直接走兜底退回原序。文本路单独用满这一个预算。依据 13- §3.9 与 14- §3.3 超时账。",
+    "_timeout_note": "🔴 2026-10-11 按实测放宽（负责人拍板「可以共用，推荐测试，然后放宽」，14- §4）：pathTimeoutMs 3000→4000（= 13- §3.9 的建议值，一整条路 = 查询 + 打分）；rerankBudgetMs 2500→3000。实测（串行、预热后）：文本池5 = 927 ms、图种子池12 = 550 ms、通路池20 = 425 ms、图路合计 1140 ms；受控探针：531 / 409 / 360 ms，**最坏形态（12 实体 × 1636 字上限）= 2158 ms** —— 2500 装不下「最坏种子 + 通路」，3000 才装得下。overallTimeoutMs 维持 10000（串行最坏 ≈ 4000+4000，仍在 10 s 内）。"
+  },
+  "text": {
+    "recallPerChannel": 30,
+    "finalK": 3,
+    "rrfK": 60,
+    "charLimit": 6000,
+    "rerankPool": 5,
+    "_rerankPool_note": "父段落级打分池（13- §3.4 定值）：按融合榜取前 5 个**不同父段落**、每段给**全文**交打分；池 5 = 3783 字 / 462 ms（池4 360 / 池8 711）。与旧的子块级池 30 口径不同，旧口径本轮已替换（14- A1）。",
+    "segmenter": "dict-longest-match",
+    "_segmenter_note": "运行期无 jieba（Node 零新依赖）→ 查询侧用『语料词表最长匹配』：词表 = chunks.text_seg 里的 jieba 词（即索引侧同一份词表），保证查询词一定在索引词表内；型号等编号由正则直接补进词表。",
+    "_charLimit_note": "🔴 原 3000 字「三条合计超则末条截」闸门已取消（14- C4）——实测约一成会截（p90 3306 字）。现为**安全阀**：实测 3 条父块上限 ≈4914 字（p90 1433 / max 1638），6000 正常永不触发；预算改由 config/evidence 的 textEvidence=3400 token + maxTotalTokens 保险丝管，超预算时**先裁历史**、证据末条只做显式标注截断。"
+  },
+  "graph": {
+    "enabled": true,
+    "_enabled_note": "2026-10-19 新增：false = 关闭图路（只跑文本路），用于 no_graph 消融臂；默认 true。",
+    "entityRecall": 30,
+    "candidateK": 30,
+    "seedMin": 5,
+    "seedMax": 8,
+    "hops": 2,
+    "nodeLimit": 40,
+    "edgeLimit": 60,
+    "pathMaxHops": 3,
+    "pathFinal": 5,
+    "pathMinFinal": 3,
+    "pathMinNodes": 3,
+    "pathMaxNodes": 6,
+    "pathPoolLimit": 40,
+    "seedRerankPool": 12,
+    "prefilterPool": 20,
+    "prefilterMax": 0.6,
+    "prefilterMean": 0.4,
+    "_pathRelax_note": "🔴 通路放宽四条（13- §3.5.4，负责人 2026-10-10 指示）+ **第二轮小改（2026-10-11 负责人拍板，见 14- §3.5）**：① 在 **2 跳子图内**枚举 ② **完全无向**（方向正确的导致→导致长链全图 0 条）③ **只走 导致/对应** ④ **≥3 节点、封顶 pathMaxNodes=6**（原 5，负责人按「比如 5 个、6 个节点」放为 6）；**二级共现路径同样 ≥3 节点**（14- C7）。🔴 **建池与取舍顺序（丙案）**：池按 **长度降序 → 相似度降序** 收满 pathPoolLimit（**长链必须先入池**）→ 池内按相似度取 prefilterPool 交打分 → 打分取 3~5 → **展示再按长度降序**（同长度保持打分序）。仍只收**极大链**（长链的短前缀不入池，负责人拍板）。",
+    "_seedRerank_note": "种子打分池 12（13- §3.5.2）：取 RRF 前 12、描述+属性**全文不截** → 打分 → 取前 8 当种子；12 = 431 ms。13 名之后分数记 -1（召回上限，非打分不准）。",
+    "_prefilter_note": "通路预筛 = 复用已有实体向量（1463 条在内存，零 embed）：通路分 = prefilterMax×最像节点余弦 + prefilterMean×各节点余弦均值 → 取前 prefilterPool=20 → 打分 → 取 max(pathMinFinal, pathFinal)=3~5（13- §3.5.5 方案 B：2 ms / 召回 2.75 优于 embed 701 ms / 2.54）。",
+    "tieEpsilon": 0.001,
+    "typePrior": [
+      "故障现象",
+      "故障原因",
+      "维修步骤",
+      "零部件",
+      "船舶装备",
+      "维护项目",
+      "注意事项"
+    ],
+    "_typePrior_note": "同名实体平手时的类型先验（A4）。实测 32 组同名 attributes 全不同 → 正常情况按分数即可分开。"
+  },
+  "diagnostics": {
+    "finalK": 5,
+    "minK": 3,
+    "maxHops": 3,
+    "lengthPenalty": 0.85,
+    "noEvidenceSimilarity": 0.5,
+    "relationWeights": {
+      "导致": 1,
+      "对应": 0.6,
+      "可预防": 0.4,
+      "需注意": 0.4,
+      "前置": 0.4,
+      "后续": 0.4,
+      "发生": 0.3,
+      "适用": 0.2,
+      "使用": 0.2,
+      "包含": 0.05,
+      "属于": 0.05
+    },
+    "_relationWeights_note": "六档权重（A6）。关系名取自 relation_types.name；未列出的一律 0.2。",
+    "_dead_key_note": "🔴 diagnostics.maxHops 是**死配置键**（接口声明了、buildDiagnostics 从未读；bfs 的 maxHops 是另一个参数）—— 2026-10-11 按 14- C5 登记，本轮不修、键保留。"
+  },
+  "reranker": {
+    "enabled": true,
+    "topN": 30,
+    "_note": "🔴 2026-10-12（RR-B1 落地）：顶层值 = **GPU 档**的值，已由 false 翻为 **true** —— GPU 档三处打分正式启用；CPU 档由下面的 cpu 块覆盖为 false。留痕：原为 A1/D25-20「接入但默认关闭」；2026-10-11 起 topN 不再被运行期引用（三路各自池值见 text.rerankPool / graph.seedRerankPool / graph.prefilterPool；top_n 按各路池大小传，14- A2）。",
+    "_enable_context": "🔴 这个开关**从来没有真正打开跑过**（验收记录/目标4/4.5 §45-62 点名：「若没真跑这一步，一旦打开就是坏的」）→ 本次施工单把「真跑一遍功能验证」列为过关判据第 4 条。质量收益**未量化**（13- 的 A/B/C 仅 4 题、无金标、且用 reranker 评 reranker）。"
+  },
+  "_dial_note": "🔴 顶层值 = GPU 档的值（D2-结构「丙」：数字进现有 JSON 的 cpu 覆盖块）。cpu 块只写 CPU 档的差异；**不建 cuda 块**。",
+  "cpu": {
+    "reranker": { "enabled": false }
+  },
+  "_cpu_note": "CPU 档三处打分（文本池5 / 种子池12 / 通路池20）**全不走**（12- RR-B1「能力保留 ≠ 常驻加载」）。依据：CPU 上打分实测中位 **37304 ms** = 预算 12.4 倍（12- §9）。",
+  "userKb": {
+    "textK": 1,
+    "textMinScore": 0.35,
+    "_note": "🆕 U4/D29：用户自建文本进证据的上限与门槛（**逻辑合并，不写任何教材库**）。textK=0 = 完全并入。空知识库时全流程与原来逐项一致。"
+  },
+  "_uncalibrated": [
+    "common.pathTimeoutMs",
+    "common.overallTimeoutMs",
+    "common.rerankBudgetMs",
+    "diagnostics.relationWeights",
+    "diagnostics.lengthPenalty",
+    "diagnostics.noEvidenceSimilarity",
+    "graph.tieEpsilon",
+    "graph.typePrior",
+    "text.rerankPool",
+    "graph.seedRerankPool",
+    "graph.prefilterPool",
+    "graph.prefilterMax",
+    "graph.prefilterMean",
+    "graph.pathPoolLimit",
+    "graph.pathMinNodes",
+    "graph.pathMaxNodes",
+    "graph.pathMinFinal"
+  ]
+}

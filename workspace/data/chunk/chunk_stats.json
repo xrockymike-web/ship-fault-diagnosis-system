@@ -1,0 +1,67 @@
+{
+ "generator": "workspace/build/chunk/build_chunks.py",
+ "version": "semantic-4gate",
+ "book": {
+  "sha256": "d0053dd1334fb9c7d4a88e66b8decf869711f63f312ed7f17cc7cbdea7042044",
+  "chars": 331555,
+  "sentences": 7479
+ },
+ "params": {
+  "alpha_sem": 0.6,
+  "beta_llm": 0.4,
+  "gamma_para": 0.15,
+  "lambda_len": 8.0,
+  "per_parent": 4,
+  "child_min": 250,
+  "child_max": 450,
+  "child_hard": 520,
+  "child_floor": 120
+ },
+ "weights": {
+  "alpha_sem": 0.6,
+  "beta_llm": 0.4,
+  "gamma_para": 0.15,
+  "lambda_len": 8.0
+ },
+ "counts": {
+  "text": 1065,
+  "parent": 267,
+  "total": 1332
+ },
+ "length": {
+  "text": {
+   "n": 1065,
+   "min": 134,
+   "p10": 240,
+   "median": 296,
+   "p90": 406,
+   "max": 473
+  },
+  "parent": {
+   "n": 267,
+   "min": 304,
+   "p10": 1058,
+   "median": 1241,
+   "p90": 1433,
+   "max": 1638
+  }
+ },
+ "quality": {
+  "text_in_range_250_450": 80.3,
+  "text_over_520": 0,
+  "parent_over_1600": 1,
+  "single_child_parents": 0
+ },
+ "attribution": {
+  "llm": 554,
+  "sem": 284,
+  "weak": 226
+ },
+ "llm": {
+  "model": "qwen3.8-flash",
+  "cache_files": [
+   "boundary_llm_qwen3.8-flash_03ea9d333d0e.jsonl"
+  ],
+  "points": 7478
+ }
+}

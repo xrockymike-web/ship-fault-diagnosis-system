@@ -1,0 +1,39 @@
+{
+  "_note": "证据与提示词参数（A8 证据三档阈值 + 七段预算 + 子图入提示词开关）。与 config/retrieval 分开放：那份管『怎么找』，这份管『怎么摆』。",
+  "_version": "1.4",
+  "_changelog": "1.4（2026-10-22 重建）：textEvidence 4100/3000 → **3400**（finalK=3 口径：3 条父块最坏 ≈4914 字 ≈3200 token），GUI 与实验同值。 1.3（2026-10-19）：① 删 `prompt.budgetTokens.domain`（900）与 `prompt.domainCharLimit`（②「本题所属领域」段整段下线）；② `textEvidence` 2200 → **3000**（把删段省下的 token 让给原文证据）；③ 段序 七段 → 六段；④ `_uncalibrated` 去掉 domainCharLimit、登记 textEvidence。 1.2（2026-10-12，RR-B1 落地 + 死键清理）：① **删除** `reranker` 键 —— 它是**死键**（代码只读 config/retrieval 那一份，这份从未被读取），且与新增的分档键冲突，留着只会误导；② `prompt.budgetTokens.roleRules` 加 `_roleRules_dead_note`（同为死键，按项目先例保留不删）。 1.1（2026-10-11，见 交接/14-检索策略细节定案与落地-10111401）：③ 文本证据 1700→2200（取消 3000 字老闸门后按实测最长 3495 字≈2184 token 留余量）；④ 子图 650→1150（盖住 60 边 1446 字 + 孤立节点清单）；**新增 ⑤ 图上通路 200**（六段→七段，路径进提示词）；新增 maxTotalTokens=7800 总量保险丝（先裁历史、再不够才裁证据末条并显式标注）；单条上限 1600→2000 纯保险；新增 domainCharLimit=1440（② 段此前是唯一没有上限代码的段）。",
+  "sufficiency": {
+    "sufficient": 0.6,
+    "partial": 0.4,
+    "_note": "A8：尺子 = 文本路最像子块余弦（RRF 分无绝对含义）。≥sufficient 充足 / [partial, sufficient) 部分 / <partial 不足。🔴 尺子在**加软偏置之前**取值（text-retrieval:273），打分只决定「挑哪几条」，不改变「够不够」。"
+  },
+  "prompt": {
+    "budgetTokens": {
+      "roleRules": 500,
+      "textEvidence": 3400,
+      "entities": 1150,
+      "paths": 400,
+      "diagnostics": 300,
+      "answer": 800
+    },
+    "_budget_note": "段序 = ①角色与规则 ②原文证据 ③局部子图 ④图上通路 ⑤诊断路径 ⑥用户问题（六段；2026-10-19 起，原 ②「本题所属领域」900 token 已转给 ②原文证据：2200 → 3000）。③ 1150 / ④ 400 / ⑤ 300 依据 13- §3.7 实测与 14- §3.3 预算账；六段合计 5350 token + 回答 800 ≤ 上下文 8192。",
+    "_roleRules_dead_note": "🔴 **死键**（2026-10-12 查实）：`budgetTokens.roleRules` 代码从不读 —— ①② 段是**写死的字符串**（`prompts.grounded` + `GROUNDED_RULES`），没有预算保护。真正被读的预算键只有 textEvidence / entities / paths / diagnostics / answer，另有 domainCharLimit。键保留并加说明（同 `diagnostics.maxHops` 先例），不删。",
+    "maxTotalTokens": 7800,
+    "_maxTotalTokens_note": "🔴 总量保险丝（负责人 2026-10-11 拍板「④ 预算上调 + 总量保险丝」）：system + 历史 + 六段 + 用户问题合计超过本值时，**先从最旧历史裁**，仍超则裁证据末条并**显式标注**——证据永不静默截断。7800 + 回答 800 ≤ 上下文 8192。",
+    "includeSubgraphInPrompt": true,
+    "_subgraph_note": "开关：子图是否整张进提示词（默认 true）。留开关是因为『给得多』是否更好**没有证据** → 登记为论文消融一档（目标 7）。",
+    "includePathScores": true,
+    "evidenceCharLimitPerItem": 2000,
+    "_perItem_note": "单条上限（实测父块最长 1166 字、三条合计最长 3495 字）—— 1600→2000 作**纯保险**，正常不触发；触发必带「（已截）」标记（14- C4）。"
+  },
+  "_uncalibrated": [
+    "sufficiency.sufficient",
+    "sufficiency.partial",
+    "prompt.includeSubgraphInPrompt",
+    "prompt.maxTotalTokens",
+    "prompt.budgetTokens.textEvidence",
+    "prompt.evidenceCharLimitPerItem",
+    "prompt.budgetTokens.paths"
+  ],
+  "_paths_budget_note": "🔴 实测校正（2026-10-11 冒烟，14- §7 留痕）：原估 200 token（按 13- 的 49 字/条只算节点名）**不够** —— 实测每条含关系名与证据 id 约 60~75 字，5 条 + 段头 ≈ 440 字 ≈ 275 token，200 token 会截在第 3 条。按实测上调到 400 token（640 字），保证 3~5 条全进。"
+}

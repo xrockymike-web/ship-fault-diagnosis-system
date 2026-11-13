@@ -1,0 +1,263 @@
+{
+  "schema_version": "public-questions-v1",
+  "counts": {
+    "questions": 50,
+    "types": {
+      "fact": 10,
+      "causal": 19,
+      "diagnostic": 21
+    }
+  },
+  "questions": [
+    {
+      "id": "Q001",
+      "type": "fact",
+      "question": "故障树分析法缩写是什么？它由哪几部分组成，最常用什么逻辑关系？"
+    },
+    {
+      "id": "Q002",
+      "type": "fact",
+      "question": "MF-47型万用表红黑表笔插孔怎么规定，欧姆档倍率有哪些，最高能测多高电压？"
+    },
+    {
+      "id": "Q003",
+      "type": "fact",
+      "question": "测电路里的电阻时，被测电阻和电源要怎么处理？"
+    },
+    {
+      "id": "Q004",
+      "type": "fact",
+      "question": "电工仪表按用途、按工作原理、按被测对象分别是怎么分类的？"
+    },
+    {
+      "id": "Q005",
+      "type": "fact",
+      "question": "仪表使用前要确认哪些事项？"
+    },
+    {
+      "id": "Q006",
+      "type": "fact",
+      "question": "传统故障诊断的观察环节里，监测指示装置要检查哪些内容？"
+    },
+    {
+      "id": "Q007",
+      "type": "causal",
+      "question": "发电机转速到额定值了，电压却建不起来，可能是什么原因？"
+    },
+    {
+      "id": "Q008",
+      "type": "causal",
+      "question": "直流电机电刷下火花过大，已排除电刷与换向器接触不良，还可能是什么原因？"
+    },
+    {
+      "id": "Q009",
+      "type": "causal",
+      "question": "电动机轴承过热，可能是什么原因造成的？"
+    },
+    {
+      "id": "Q010",
+      "type": "causal",
+      "question": "发电机轴承温度异常升高，可能是什么原因造成的？"
+    },
+    {
+      "id": "Q011",
+      "type": "causal",
+      "question": "电动机不能起动，可能是什么原因造成的？"
+    },
+    {
+      "id": "Q012",
+      "type": "causal",
+      "question": "发电机电压比额定值低，可能是什么原因造成的？"
+    },
+    {
+      "id": "Q013",
+      "type": "causal",
+      "question": "起货机电动机温度过高甚至冒烟，可能是什么原因？"
+    },
+    {
+      "id": "Q014",
+      "type": "causal",
+      "question": "接触器触头老是熔焊，可能是什么原因造成的？"
+    },
+    {
+      "id": "Q015",
+      "type": "causal",
+      "question": "POWER灯灭了，可能是什么原因造成的？"
+    },
+    {
+      "id": "Q016",
+      "type": "causal",
+      "question": "电动机温升老是偏高，可能是什么原因引起的？"
+    },
+    {
+      "id": "Q017",
+      "type": "causal",
+      "question": "发电机电压建不起来，可能是什么原因造成的？"
+    },
+    {
+      "id": "Q018",
+      "type": "causal",
+      "question": "PLC输出全都不通，可能是什么原因造成的？"
+    },
+    {
+      "id": "Q019",
+      "type": "causal",
+      "question": "主开关合闸使用过程中老是跳闸，可能是什么原因？"
+    },
+    {
+      "id": "Q020",
+      "type": "causal",
+      "question": "按下停止按钮后接触器不释放或释放缓慢，可能是什么原因？"
+    },
+    {
+      "id": "Q021",
+      "type": "diagnostic",
+      "question": "失压脱扣器不能使断路器分断，可能是什么原因，该怎么处理？"
+    },
+    {
+      "id": "Q022",
+      "type": "diagnostic",
+      "question": "分励脱扣器不能使断路器分断，可能是哪些原因？各该怎么处理？"
+    },
+    {
+      "id": "Q023",
+      "type": "diagnostic",
+      "question": "PLC的POWER灯灭了，该按什么步骤排查处理？"
+    },
+    {
+      "id": "Q024",
+      "type": "diagnostic",
+      "question": "PLC输出随机动作，供电电压太低、输入噪声太大、接触不良这几样该按什么步骤查怎么处理？"
+    },
+    {
+      "id": "Q025",
+      "type": "diagnostic",
+      "question": "某一输入继电器不能接通，可能是哪些原因，分别该怎么处理？"
+    },
+    {
+      "id": "Q026",
+      "type": "diagnostic",
+      "question": "断路器温升过高，可能是哪些原因，该怎么处理？"
+    },
+    {
+      "id": "Q027",
+      "type": "diagnostic",
+      "question": "失压脱扣器有噪声，该怎么一步步处理？"
+    },
+    {
+      "id": "Q028",
+      "type": "diagnostic",
+      "question": "熔断器老是多次熔断，该按什么步骤查原因和处理？"
+    },
+    {
+      "id": "Q029",
+      "type": "diagnostic",
+      "question": "PLC输出全都不能接通，该按什么步骤排查处理？"
+    },
+    {
+      "id": "Q030",
+      "type": "diagnostic",
+      "question": "半导体过电流脱扣器误动作把断路器顶开了，该按什么步骤查和处理？"
+    },
+    {
+      "id": "Q031",
+      "type": "diagnostic",
+      "question": "PLC异常动作的继电器编号是8点单位，查明是COM螺钉松动，该怎么处理？"
+    },
+    {
+      "id": "Q032",
+      "type": "diagnostic",
+      "question": "电动操作断路器触头不能闭合，该按什么步骤查原因和处理？"
+    },
+    {
+      "id": "Q033",
+      "type": "diagnostic",
+      "question": "PLC输入全都不通，该按什么步骤查原因和处理？"
+    },
+    {
+      "id": "Q034",
+      "type": "diagnostic",
+      "question": "火灾探测器显示报警但现场没火情，该按什么步骤查明原因并处理？"
+    },
+    {
+      "id": "Q035",
+      "type": "diagnostic",
+      "question": "PLC的RUN灯灭了，该按什么步骤排查处理？"
+    },
+    {
+      "id": "Q036",
+      "type": "diagnostic",
+      "question": "测电机绕组对地绝缘电阻，该按什么步骤做？"
+    },
+    {
+      "id": "V001",
+      "type": "fact",
+      "question": "万用表的基本结构由哪几部分组成？表头用的是什么类型的测量机构？"
+    },
+    {
+      "id": "V002",
+      "type": "fact",
+      "question": "兆欧表有几个接线柱？L、E、G分别接哪里？"
+    },
+    {
+      "id": "V003",
+      "type": "fact",
+      "question": "电流互感器的符号是什么？二次侧电流和接地有什么要求？"
+    },
+    {
+      "id": "V004",
+      "type": "fact",
+      "question": "船用电缆由哪几部分组成，绝缘层和保护层各起什么作用？"
+    },
+    {
+      "id": "V005",
+      "type": "causal",
+      "question": "电动机温升高，一般是什么原因造成的？"
+    },
+    {
+      "id": "V006",
+      "type": "causal",
+      "question": "按下启动按钮，接触器吸不上还嗡嗡响，已经确认线圈没有断路，还可能是什么原因？"
+    },
+    {
+      "id": "V007",
+      "type": "causal",
+      "question": "断路器温升过高，已经检查过触头、没有明显磨损，还可能是哪些原因？"
+    },
+    {
+      "id": "V008",
+      "type": "causal",
+      "question": "发电机端电压低，有人说是移相电抗器气隙过大造成的，对吗？还可能是什么原因？"
+    },
+    {
+      "id": "V009",
+      "type": "causal",
+      "question": "直流电机电刷下火花大，换向器和电刷压力都已检查正常，还可能是什么原因？"
+    },
+    {
+      "id": "V010",
+      "type": "diagnostic",
+      "question": "给电机绕组测对地绝缘电阻，选什么表、接线柱怎么接、按什么步骤做？"
+    },
+    {
+      "id": "V011",
+      "type": "diagnostic",
+      "question": "用钳形电流表测电流，操作步骤是怎样的？"
+    },
+    {
+      "id": "V012",
+      "type": "diagnostic",
+      "question": "电钻过热时，超载、轴承发热、通风不良分别怎么处理？"
+    },
+    {
+      "id": "M049",
+      "type": "diagnostic",
+      "question": "「输出均不能接通」怀疑是「接触不良(端排)」引起的，该怎么处理？"
+    },
+    {
+      "id": "M050",
+      "type": "diagnostic",
+      "question": "「异常动作的继电器编号为8单位」怀疑是「端子连接排接触不良」引起的，该怎么处理？"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the SoftwareX paper and the archived release."
+title: "Ship Fault Diagnosis System: offline knowledge-graph RAG for marine electrical equipment fault diagnosis"
+type: software
+version: 0.5.1
+license: Apache-2.0
+date-released: "2026-10-27"
+keywords:
+  - fault diagnosis
+  - knowledge graph
+  - retrieval-augmented generation
+  - offline deployment
+authors:
+  - family-names: Xu
+    given-names: Mingyuan
+    affiliation: "Department of Computer Science and Engineering, Shaoxing University, Shaoxing 312000, China"
+  - family-names: Liu
+    given-names: Huan
+    affiliation: "Department of Computer Science and Engineering, Shaoxing University, Shaoxing 312000, China"
+  - family-names: Qi
+    given-names: Yenan
+    affiliation: "Department of Computer Science and Engineering, Shaoxing University, Shaoxing 312000, China"
+  - family-names: Yu
+    given-names: Donghua
+    affiliation: "Department of Computer Science and Engineering, Shaoxing University, Shaoxing 312000, China"

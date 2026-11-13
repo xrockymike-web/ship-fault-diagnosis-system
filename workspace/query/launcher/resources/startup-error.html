@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>船舶故障诊断系统 — 启动失败</title>
+<!--
+  启动引导/自检失败时的错误页（《技术路线总纲》§4.4：launcher/resources 的职责之一）。
+  ⚠️ 目标 2 只**放进目录**，不接入流程（D2-22）；接入留目标 8。
+  接入方式（目标 8）：把失败详情填进 #detail 与 #steps，再用一个 BrowserWindow 显示本文件。
+  约束：**不得引用任何外部资源**（离线、file:// 加载）。
+-->
+<style>
+  :root { color-scheme: light; }
+  body {
+    margin: 0; padding: 40px 44px;
+    font: 15px/1.7 "Microsoft YaHei", "Segoe UI", system-ui, sans-serif;
+    color: #1f2328; background: #f7f7f8;
+  }
+  h1 { margin: 0 0 6px; font-size: 22px; }
+  .sub { color: #6b7280; margin-bottom: 22px; }
+  .card {
+    background: #fff; border: 1px solid #e5e7eb; border-radius: 10px;
+    padding: 18px 20px; margin-bottom: 18px; max-width: 900px;
+  }
+  .card h2 { margin: 0 0 10px; font-size: 16px; }
+  .detail { white-space: pre-wrap; word-break: break-all; font-family: Consolas, monospace; font-size: 13px; color: #b42318; }
+  ol { margin: 0; padding-left: 22px; }
+  li { margin: 6px 0; }
+  code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  .hint { color: #6b7280; font-size: 13px; }
+</style>
+</head>
+<body>
+  <h1>启动失败</h1>
+  <div class="sub">程序没能完成启动自检。下面是具体缺什么、在哪，以及可以照做的步骤。</div>
+
+  <div class="card">
+    <h2>具体问题</h2>
+    <div class="detail" id="detail">（此处由程序填入：缺哪个文件、在哪个路径、期望的结构是什么）</div>
+  </div>
+
+  <div class="card">
+    <h2>可以照做的步骤</h2>
+    <ol id="steps">
+      <li>确认解压是**完整**的：<code>bin/</code>、<code>data/</code>、<code>environment/</code> 三个目录必须同在，缺一不可。</li>
+      <li>确认程序目录**没有被单独移动**过（例如只把 <code>bin/</code> 拷走）。</li>
+      <li>确认杀毒软件没有隔离 <code>environment/</code> 下的 <code>llama-server.exe</code> 或模型文件。</li>
+      <li>仍然不行：把本页「具体问题」里的路径连同 <code>data/runtime/logs/app.log</code> 一起反馈。</li>
+    </ol>
+    <div class="hint">本程序不联网、不需要安装，全部数据只存在程序目录内的 <code>data/runtime/</code>。</div>
+  </div>
+</body>
+</html>

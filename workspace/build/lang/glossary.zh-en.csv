@@ -1,0 +1,225 @@
+zh,en,kind,note,status
+脱扣器,trip unit,entity,,confirmed
+失压脱扣器,undervoltage trip unit,term,,confirmed
+分励脱扣器,shunt trip unit,term,,confirmed
+热脱扣器,thermal trip unit,term,,confirmed
+欠电压,undervoltage,term,,confirmed
+过电压,overvoltage,term,,confirmed
+过载,overload,term,,confirmed
+短路,short circuit,term,,confirmed
+缺相,phase loss,term,,confirmed
+断相,phase failure,term,,confirmed
+灭弧室,arc chute,term,,confirmed
+触头,contact,term,,confirmed
+触头压力,contact pressure,term,,confirmed
+触头烧蚀,contact erosion,term,,confirmed
+熔断器,fuse,entity,,confirmed
+熔断,fuse blowing,term,,confirmed
+接触器,contactor,entity,,confirmed
+继电器,relay,term,,confirmed
+断路器,circuit breaker,entity,,confirmed
+主开关,main switch,term,,confirmed
+电枢,armature,term,,confirmed
+换向,commutation,term,,confirmed
+换向器,commutator,entity,,confirmed
+电刷,brush,entity,,confirmed
+励磁,excitation,term,,confirmed
+励磁绕组,excitation winding,term,,confirmed
+剩磁,residual magnetism,term,,confirmed
+发电机,generator,term,,confirmed
+电动机,motor,term,,confirmed
+变压器,transformer,term,,confirmed
+配电板,switchboard,term,,confirmed
+应急电源,emergency power supply,term,,confirmed
+绝缘电阻,insulation resistance,term,,confirmed
+接地,earthing,term,,confirmed
+漏电,earth leakage,term,,confirmed
+剩余电流,residual current,term,,confirmed
+温升,temperature rise,term,,confirmed
+振动,vibration,term,,confirmed
+噪声,noise,term,,confirmed
+万用表,multimeter,entity,,confirmed
+兆欧表,megohmmeter,entity,,confirmed
+绝缘电阻表,insulation resistance tester,entity,,confirmed
+钳形电流表,clamp-on ammeter,entity,,confirmed
+钳口,clamp jaw,term,,confirmed
+保护环,guard ring,term,,confirmed
+接线柱,terminal post,term,,confirmed
+端子排,terminal block,term,,confirmed
+故障树分析法,fault tree analysis,entity,,confirmed
+专家系统,expert system,term,,confirmed
+经验诊断法,empirical diagnostic method,term,,confirmed
+故障现象,fault symptom,term,,confirmed
+故障原因,fault cause,term,,confirmed
+维修步骤,maintenance procedure,term,,confirmed
+维护项目,maintenance item,term,,confirmed
+注意事项,precautions,term,,confirmed
+船舶电气设备,marine electrical equipment,term,,confirmed
+控制回路,control circuit,term,,confirmed
+主回路,main circuit,term,,confirmed
+线圈,coil,term,,confirmed
+衔铁,armature,term,,confirmed
+脱扣轴,tripping shaft,term,,confirmed
+自由脱扣,free tripping,term,,confirmed
+储能弹簧,energy-storing spring,term,,confirmed
+晶体管,transistor,entity,,confirmed
+故障树,fault tree,entity,,confirmed
+不能起动,failure to start,entity,,confirmed
+功率表,wattmeter,entity,,confirmed
+发光二极管,light-emitting diode,entity,,confirmed
+负载过大,excessive load,entity,,confirmed
+数字式万用表,digital multimeter,entity,,confirmed
+电流线圈,current coil,entity,,confirmed
+电压,voltage,entity,,confirmed
+电阻器,resistor,entity,,confirmed
+集成电路,integrated circuit,entity,,confirmed
+压力继电器,pressure relay,entity,,confirmed
+输入接口,input interface,entity,,confirmed
+重新调整,readjustment,entity,,confirmed
+洗衣机,washing machine,entity,,confirmed
+绕组,winding,entity,,confirmed
+定时器,timer,entity,,confirmed
+波轮,impeller,entity,,confirmed
+电动机不能起动,motor fails to start,entity,,confirmed
+电压过低,undervoltage,entity,,confirmed
+陀螺罗经,gyrocompass,entity,,confirmed
+整流器,rectifier,entity,,confirmed
+轴承损坏,bearing damage,entity,,confirmed
+顶事件,top event,entity,,confirmed
+观察,observation,entity,,confirmed
+表头,meter head,entity,,confirmed
+转换开关,changeover switch,entity,,confirmed
+电压线圈,voltage coil,entity,,confirmed
+电流互感器,current transformer,entity,,confirmed
+二极管,diode,entity,,confirmed
+电流,current,entity,,confirmed
+TA,TA,entity,,confirmed
+船用电气设备,marine electrical equipment,entity,,confirmed
+石墨电刷,graphite brush,entity,,confirmed
+光敏电阻,photoresistor,entity,,confirmed
+稳压二极管,Zener diode,entity,,confirmed
+印制电路板,printed circuit board,entity,,confirmed
+电流继电器,current relay,entity,,confirmed
+时间继电器,time relay,entity,,confirmed
+热继电器,thermal relay,entity,,confirmed
+电压继电器,voltage relay,entity,,confirmed
+RS,RS,entity,,confirmed
+熔丝,fuse,entity,,confirmed
+输出接口,output interface,entity,,confirmed
+POWER灯灭,POWER lamp off,entity,,confirmed
+电源电压低,low supply voltage,entity,,confirmed
+触头接触不良,poor contact of contacts,entity,,confirmed
+重接,reconnect,entity,,confirmed
+拧紧,tighten,entity,,confirmed
+船用电机,marine motor,entity,,confirmed
+电冰箱,refrigerator,entity,,confirmed
+轴承,bearing,entity,,confirmed
+电刷下火花过大,excessive sparking under brush,entity,,confirmed
+电动机本身故障,motor internal fault,entity,,confirmed
+控制系统维护,control system maintenance,entity,,confirmed
+电磁制动器,electromagnetic brake,entity,,confirmed
+电位器,potentiometer,entity,,confirmed
+自动起动失效,automatic start failure,entity,,confirmed
+火灾探测器,fire detector,entity,,confirmed
+关闭器,shutter,entity,,confirmed
+警钟,alarm bell,entity,,confirmed
+警灯,alarm lamp,entity,,confirmed
+接线盒,junction box,entity,,confirmed
+电气元器件,electrical components,entity,,confirmed
+显示器,display,entity,,confirmed
+传感器,sensor,entity,,confirmed
+灭弧装置,arc extinguishing device,entity,,confirmed
+配电板式绝缘电阻表,switchboard-type insulation resistance meter,entity,,confirmed
+操作不当,improper operation,entity,,confirmed
+接线错误,incorrect wiring,entity,,confirmed
+询问操作人员,interview the operator,entity,,confirmed
+电工仪表,electrical instrument,entity,,confirmed
+手摇发电机,hand-cranked generator,entity,,confirmed
+穿心式电流互感器,through-type current transformer,entity,,confirmed
+电容,capacitance,entity,,confirmed
+光敏器件,photosensitive device,entity,,confirmed
+磁电系仪表,moving-coil instrument,entity,,confirmed
+船用电缆,marine cable,entity,,confirmed
+聚酯薄膜,polyester film,entity,,confirmed
+电容器,capacitor,entity,,confirmed
+绝缘层,insulation layer,entity,,confirmed
+晶体管故障,transistor fault,entity,,confirmed
+电路板故障,circuit board fault,entity,,confirmed
+电路板维修步骤,circuit board repair procedure,entity,,confirmed
+温度继电器,temperature relay,entity,,confirmed
+电磁式继电器,electromagnetic relay,entity,,confirmed
+中间继电器,intermediate relay,entity,,confirmed
+万能式断路器,air circuit breaker,entity,,confirmed
+PLC控制系统,PLC control system,entity,,confirmed
+灭弧罩,arc chute,entity,,confirmed
+铁心,core,entity,,confirmed
+短路环,shading coil,entity,,confirmed
+熔体,fuse element,entity,,confirmed
+辅助开关,auxiliary switch,entity,,confirmed
+总线,bus,entity,,confirmed
+输入端子,input terminal,entity,,confirmed
+输出端子,output terminal,entity,,confirmed
+接触器吸不上,contactor fails to pick up,entity,,confirmed
+起动电动机时断路器立即分断,circuit breaker trips immediately when starting the motor,entity,,confirmed
+线圈断路,coil open circuit,entity,,confirmed
+熔断器熔断,fuse blown,entity,,confirmed
+吸力不足,insufficient holding force,entity,,confirmed
+更换熔断器,replace the fuse,entity,,confirmed
+焊接,welding,entity,,confirmed
+接通电源,switch on the power supply,entity,,confirmed
+更换线圈,replace the coil,entity,,confirmed
+电钻,electric drill,entity,,confirmed
+转轴,shaft,entity,,confirmed
+电动机起动后转速低,motor speed low after starting,entity,,confirmed
+轴承过热,bearing overheating,entity,,confirmed
+电钻不能起动,electric drill fails to start,entity,,confirmed
+轴承本身故障,bearing fault,entity,,confirmed
+电刷与换向器接触不良,poor contact between brush and commutator,entity,,confirmed
+轴承磨损,bearing wear,entity,,confirmed
+定子绕组短路,stator winding short circuit,entity,,confirmed
+检查电源,check the power supply,entity,,confirmed
+交流电动起货机,AC electric cargo winch,entity,,confirmed
+电动锚机,electric windlass,entity,,confirmed
+伺服电动机,servo motor,entity,,confirmed
+直接控制方式,direct control mode,entity,,confirmed
+报警控制器,alarm controller,entity,,confirmed
+数字电子调速系统,digital electronic governor system,entity,,confirmed
+运动部件卡阻,moving parts jammed,entity,,confirmed
+电气元器件故障,electrical component fault,entity,,confirmed
+遥控无法起动主机,main engine cannot be started by remote control,entity,,confirmed
+雷达设备,radar equipment,entity,,confirmed
+收发机,transceiver,entity,,confirmed
+雷达安装,radar installation,entity,,confirmed
+失电压脱扣装置,undervoltage release,entity,,confirmed
+分励脱扣装置,shunt release,entity,,confirmed
+控制及信号指示电路,control and signal indication circuit,entity,,confirmed
+传统故障诊断法,conventional fault diagnosis method,entity,,confirmed
+中间事件,intermediate event,entity,,confirmed
+底事件,basic event,entity,,confirmed
+维修人员,maintenance personnel,entity,,confirmed
+发电机空载电压高,generator no-load voltage high,entity,,confirmed
+检查监测指示装置,check the monitoring and indicating device,entity,,confirmed
+指针式万用表,analog multimeter,entity,,confirmed
+MF-47型万用表,MF-47 multimeter,entity,,confirmed
+测量电路,measuring circuit,entity,,confirmed
+磁电系比率表,moving-coil ratio meter,entity,,confirmed
+晶闸管,thyristor,entity,,confirmed
+热电偶,thermocouple,entity,,confirmed
+电阻,resistor,entity,,confirmed
+FU,FU,entity,,confirmed
+可变电阻,variable resistor,entity,,confirmed
+热敏电阻,thermistor,entity,,confirmed
+电源电路,power supply circuit,entity,,confirmed
+电子元器件焊接要求,soldering requirements for electronic components,entity,,confirmed
+实体编号,physical designation,relation,,confirmed
+R001,R001,relation,,confirmed
+R002,R002,relation,,confirmed
+R003,R003,relation,,confirmed
+R004,R004,relation,,confirmed
+R005,R005,relation,,confirmed
+R006,R006,relation,,confirmed
+R007,R007,relation,,confirmed
+R008,R008,relation,,confirmed
+R009,R009,relation,,confirmed
+R010,R010,relation,,confirmed
+R011,R011,relation,,confirmed

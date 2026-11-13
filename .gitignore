@@ -1,0 +1,34 @@
+# Runtime and build outputs
+workspace/bin/
+workspace/data/runtime/
+workspace/data/user_data/
+workspace/data/vector-index/**/*.sqlite
+portable/
+release/
+
+# Environment payloads are downloaded, never committed (see workspace/environment/README.md)
+# Only the per-directory README.md files are tracked; re-include the directories so that
+# the negation below can actually reach files nested two levels deep.
+workspace/environment/**
+!workspace/environment/
+!workspace/environment/**/
+!workspace/environment/**/README.md
+
+# Python
+__pycache__/
+*.py[cod]
+.venv*/
+
+# Node / Electron
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# OS
+Thumbs.db
+.DS_Store

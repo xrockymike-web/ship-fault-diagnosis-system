@@ -1,0 +1,107 @@
+船舶故障诊断系统 —— 第三方组件与许可清单
+Third-Party Components and Licenses
+================================================================
+
+本文档列出**随本软件一起分发**的第三方组件及其许可。
+本软件自身源代码以 Apache License 2.0 发布（见项目根 LICENSE）。
+
+分发形态说明
+----------------------------------------------------------------
+本软件为**完全离线、解压即用**的 Windows 桌面应用，不联网安装依赖，
+因此第三方组件以"随包"形态提供。各组件版权归其各自作者所有。
+
+本清单与 `workspace/environment/*/SOURCE.txt` 的分工：
+  · 本文件     —— **许可声明**（谁写的、什么许可、要不要署名）
+  · SOURCE.txt —— **来源与完整性追溯**（下载 URL、sha256、获取时间）
+两者互补，都要保留。
+
+
+一、随交付包分发（便携包内 environment/ 与 bin/）
+================================================================
+
+1) Electron  v44.4.5 （win32-x64）
+   许可      : MIT
+   版权      : Copyright (c) Electron contributors / OpenJS Foundation
+   内置      : Node.js 24.21.0 / Chromium 152 / SQLite 3.53.4
+   许可全文  : environment/electron/LICENSE
+   Chromium  : 组件级许可见 environment/electron/LICENSES.chromium.html
+
+2) llama.cpp  b11205 （Windows x86_64）
+   许可      : MIT
+   版权      : Copyright (c) 2023-2024 The ggml authors
+   变体      : CPU 版（llamacpp/cpu）与 CUDA 版（llamacpp/cuda，含 cudart）
+   NVIDIA    : CUDA 运行时（cudart）另受 NVIDIA CUDA Toolkit EULA 约束，
+               仅随本软件内部使用，不得单独抽取再分发。
+   许可全文  : environment/llamacpp/{cpu,cuda}/LICENSE
+
+3) Qwen3-0.6B-GGUF（Q8_0）—— 应答模型
+   发布者    : Qwen（阿里巴巴，魔塔官方组织 Qwen/Qwen3-0.6B-GGUF）
+   许可      : Apache License 2.0
+   许可全文  : environment/models/answer/LICENSE-Qwen3-0.6B-GGUF.txt
+
+4) Qwen3-0.6B（Q4_K_M）—— 低配档应答模型
+   来源      : 由上述官方 Q8_0 权重离线二次量化自造
+   许可      : Apache License 2.0（继承自上游权重）
+
+5) Qwen3-Embedding-0.6B-GGUF（Q8_0）—— 嵌入模型
+   发布者    : Qwen（魔塔官方组织 Qwen/Qwen3-Embedding-0.6B-GGUF）
+   许可      : Apache License 2.0
+
+6) Qwen3-Reranker-0.6B（Q8_0，GGUF）—— 重排序模型
+   发布者    : 第三方仓 Chiwei/Qwen3-Reranker-0.6B-Q8_0-GGUF
+               （由官方 Qwen/Qwen3-Reranker-0.6B 经 llama.cpp 转换）
+   许可      : Apache License 2.0（base_model: Qwen/Qwen3-Reranker-0.6B）
+
+7) d3.js  v7.8.5
+   许可      : ISC
+   版权      : Copyright 2010-2023 Mike Bostock
+   形态      : 随包单文件（frontend/public/vendor/d3.v7.min.js）
+   详见      : frontend/public/vendor/SOURCE.txt
+
+8) Node.js 运行时（Electron 内置）
+   许可      : MIT
+   版权      : Copyright Node.js contributors / OpenJS Foundation
+
+
+二、仅开发/建库期使用（**不随交付包分发**）
+================================================================
+
+9) Python 3.12.4（embeddable）
+   许可      : Python Software Foundation License 2.0
+   用途      : 离线建库管线（语料清洗、分块、图谱构建、建库）
+   说明      : 不进入便携包；用户无需安装。
+
+10) jieba 0.42.1（中文分词）
+   许可      : MIT
+   版权      : Copyright (c) 2013 Sun Junyi
+   用途      : **仅建库期**为全文索引生成预分词列（chunks.text_seg）；
+               运行期不使用（查询侧走语料词表最长匹配 + trigram）。
+   说明      : 不进入便携包。
+
+11) PyMuPDF 1.28.2 / Pillow 12.3.0
+   许可      : PyMuPDF 为 AGPL-3.0 / 商业双许可；Pillow 为 MIT-CMU
+   用途      : **仅建库期**文档解析与图像处理。
+   说明      : 不进入便携包，不随交付物分发，故不触发 AGPL 的分发义务。
+               ⚠️ 若将来随包分发建库工具链，必须重新评估 PyMuPDF 的许可。
+
+12) setuptools 84.0.0 / wheel 0.48.0 / packaging
+   许可      : MIT / Apache-2.0 / BSD（各自见 site-packages 内 LICENSE）
+   用途      : 仅用于建库期安装 jieba。
+
+
+三、数据处理说明
+================================================================
+
+本软件内置的领域知识库（语料、知识图谱）为**本项目自制**内容，
+不包含任何第三方出版物的原文；其来源、生成方法与核验记录见
+`workspace/data/document/语料库说明.md`。知识来源的文献书目在论文中列出。
+
+本软件**完全离线运行**：不含遥测、不含更新检查、不发起任何网络请求。
+
+
+四、声明
+================================================================
+
+以上组件均按其各自许可的条款使用。若对某组件的许可归属有疑问，
+请以该组件自带的许可文件（上列"许可全文"路径）为准。
+本清单不改变任何第三方组件的许可条款。

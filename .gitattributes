@@ -1,0 +1,4 @@
+# Store every file byte-exact.
+# The repository publishes SHA256SUMS.txt, so any end-of-line normalisation on checkout
+# (core.autocrlf) would make the published checksums fail. Do not convert line endings.
+* -text

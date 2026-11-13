@@ -1,0 +1,2 @@
+# Python dependencies of the build pipeline (everything else is standard library)
+jieba==0.42.1

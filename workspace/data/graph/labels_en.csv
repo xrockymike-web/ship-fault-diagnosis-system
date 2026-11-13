@@ -1,0 +1,19 @@
+kind,zh,en
+relation,包含,contains
+relation,发生,occurs
+relation,导致,causes
+relation,对应,corresponds to
+relation,使用,uses
+relation,适用,applies to
+relation,前置,precedes
+relation,后续,follows
+relation,属于,belongs to
+relation,可预防,preventable by
+relation,需注意,requires attention
+entity_type,故障原因,fault cause
+entity_type,故障现象,fault symptom
+entity_type,注意事项,precaution
+entity_type,维修步骤,repair step
+entity_type,维护项目,maintenance item
+entity_type,船舶装备,ship equipment
+entity_type,零部件,component
