@@ -2,7 +2,7 @@
 
 **An offline, knowledge-graph-augmented RAG question-answering system for marine electrical equipment fault diagnosis.**
 
-Version 0.5.1
+Version 0.5.1 · archived at Zenodo: [10.5281/zenodo.24198739](https://doi.org/10.5281/zenodo.24198739)
 
 The system answers natural-language questions about ship electrical equipment maintenance and fault diagnosis by fusing **two retrieval pathways** — text and knowledge graph — and grounding every claim in cited evidence. It runs **fully offline** on consumer hardware (local embedding / reranking / generation via llama.cpp).
 

@@ -38,11 +38,14 @@ row counts, vector counts) — the rebuild should match it.
 
 ## 4. Release archive
 
-A self-contained Windows archive is distributed with the paper through Zenodo. The record DOI and the
-archive checksum are published in the README and next to the archive once the record is created.
+A self-contained Windows archive is distributed through Zenodo:
+`shipdiag-v0.5.1-win-x64.zip`, 4,370,640,185 bytes, DOI
+[10.5281/zenodo.24198739](https://doi.org/10.5281/zenodo.24198739). Its SHA-256 is
+`4237624becf9d6b0e4034297785642ba79c66f212b6c814e9e5174f3c911bdb2`.
 
-The current release archive corresponds to the last packaged build; the repository version is 0.5.1
-(the 0.5.1 archive will be published with the paper).
+The same record carries `boat-diagnosis-experiment-v1.0.0.zip` (3,412,639 bytes, CC BY 4.0), the
+evaluation questions and the four-pipeline answers. The archive corresponds to version 0.5.1 of this
+repository.
 
 ## 5. Verify anything you downloaded
 

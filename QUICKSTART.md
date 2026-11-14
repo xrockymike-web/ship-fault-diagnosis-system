@@ -4,14 +4,15 @@ Windows 10/11 x64. No installation, no internet connection, no administrator rig
 
 ## 1. Get the archive
 
-Download the release archive distributed with the paper (Zenodo record, DOI listed in the repository
-README once assigned) and check its integrity:
+Download the release archive from Zenodo — DOI
+[10.5281/zenodo.24198739](https://doi.org/10.5281/zenodo.24198739) — and check its integrity:
 
 ```powershell
-(Get-FileHash .\船舶故障诊断系统-v<version>-win-x64.zip -Algorithm SHA256).Hash
+(Get-FileHash .\shipdiag-v0.5.1-win-x64.zip -Algorithm SHA256).Hash
 ```
 
-The exact archive name and its checksum are published with the DOI record — see [DEPOSIT.md](DEPOSIT.md).
+The archive is `shipdiag-v0.5.1-win-x64.zip` (4,370,640,185 bytes); its checksum and the rest of the
+payload list are in [DEPOSIT.md](DEPOSIT.md).
 
 ## 2. Extract
 

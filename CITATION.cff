@@ -5,6 +5,7 @@ type: software
 version: 0.5.1
 license: Apache-2.0
 repository-code: "https://github.com/xrockymike-web/ship-fault-diagnosis-system"
+doi: 10.5281/zenodo.24198739
 date-released: "2026-10-27"
 keywords:
   - fault diagnosis
